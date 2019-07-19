@@ -4,8 +4,10 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import {Link} from 'react-router-dom';
 import pic from '../assets/img/mahjong.jpeg';
 
+
 class Header extends React.Component {
   constructor(props) {
+
     super(props);
     this.state = {
       collapse: false,
@@ -23,8 +25,9 @@ class Header extends React.Component {
   render() {
     return (
       <div>
+
         <header>
-          <Router>
+
             <MDBNavbar color="indigo" dark expand="md" fixed="top">
 
               {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
@@ -45,13 +48,13 @@ class Header extends React.Component {
                       <MDBNavLink to="/about">About us</MDBNavLink>
                     </MDBNavItem>
                     <MDBNavItem>
-                      <MDBNavLink to="howitworks">How it works</MDBNavLink>
+                      <MDBNavLink to="/howitworks">How it works</MDBNavLink>
                     </MDBNavItem>
                   </MDBNavbarNav>
 
               </MDBCollapse>
             </MDBNavbar>
-          </Router>
+
 
           <MDBView src={pic}>
             <MDBMask overlay="black-light" className="flex-center flex-column text-white text-center">

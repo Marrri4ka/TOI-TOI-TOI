@@ -7,9 +7,7 @@ import {HashRouter} from 'react-router-dom';
 import {AppContainer} from 'react-hot-loader';
 
 const render = (Component) => {
-  ReactDOM.render(<div>
-    
-    <AppContainer>
+  ReactDOM.render(<div><AppContainer>
     <HashRouter>
       <Component/>
     </HashRouter>
@@ -23,8 +21,3 @@ if (module.hot) {
     render(App)
   });
 }
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();

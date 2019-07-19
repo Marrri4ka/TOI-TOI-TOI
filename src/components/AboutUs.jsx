@@ -1,4 +1,6 @@
 import React from 'react';
+import {  Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class AboutUs extends React.Component {
   constructor(props){
@@ -8,7 +10,7 @@ class AboutUs extends React.Component {
   render(){
     return(
       <div>Hello</div>
-    )
+    );
   }
 }
 
