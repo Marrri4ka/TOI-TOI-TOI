@@ -2,6 +2,7 @@ import React from 'react';
 import './styles.css';
 
 
+
 function RentCart(){
   return(
     <div class="container">

@@ -6,6 +6,7 @@ import pic from '../assets/img/mahjong.jpeg';
 import './styles.css';
 
 
+
 class Header extends React.Component {
   constructor(props) {
 
@@ -53,6 +54,9 @@ class Header extends React.Component {
                     </MDBNavItem>
                     <MDBNavItem>
                       <MDBNavLink to="/rentcart">Rent cart</MDBNavLink>
+                    </MDBNavItem>
+                    <MDBNavItem>
+                      <MDBNavLink to="/pay">Pay</MDBNavLink>
                     </MDBNavItem>
                   </MDBNavbarNav>
 

@@ -6,6 +6,7 @@ import AboutUs from './components/AboutUs';
 import Demo from './components/Demo';
 import HowItWorks from './components/HowItWorks';
 import RentCart from './components/RentCart';
+import PaymentMethod from './components/PaymentMethod';
 
 import { Switch, Route } from 'react-router-dom';
 
@@ -31,6 +32,7 @@ class App extends React.Component{
         <Route path='/about' component={AboutUs}/>
         <Route path='/howitworks' component={HowItWorks}/>
           <Route path='/rentcart' component={RentCart}/>
+            <Route path='/pay' component={PaymentMethod}/>
         </Switch>
 
 
