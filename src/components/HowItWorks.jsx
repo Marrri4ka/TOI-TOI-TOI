@@ -37,78 +37,47 @@ const [showMessage, setShowMessage] = useState(false);
         Filters
       </Alert.Heading>
       <p>
-        <table class="table">
-    <thead>
-      <tr>
-
-        <th scope="col">First</th>
-
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">12</th>
-
-      </tr>
-      <tr>
-        <th scope="row">21</th>
-
-      </tr>
-      <tr>
-        <th scope="row">30</th>
-
-      </tr>
-    </tbody>
-    <thead>
-      <tr>
-
-        <th scope="col">First</th>
-
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">12</th>
-
-      </tr>
-      <tr>
-        <th scope="row">21</th>
-
-      </tr>
-      <tr>
-        <th scope="row">30</th>
-
-      </tr>
-    </tbody>
-    <thead>
-      <tr>
-
-        <th scope="col">First</th>
-
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">12</th>
-
-      </tr>
-      <tr>
-        <th scope="row">21</th>
-
-      </tr>
-      <tr>
-        <th scope="row">30</th>
-
-      </tr>
-    </tbody>
-  </table>
+        <div class="support-menu">
+  <nav class="vertical">
+  <ul><li>
+  <a href="#">SparkkTV.com</a>
+  <div><ul>
+  <li><a href="#">General</a></li>
+  <li><a href="#">My Account</a></li>
+  <li><a href="#">Watching</a></li>
+  <li><a href="#">How To's</a></li>
+  <li><a href="#">Site Features</a></li>
+  <li><a href="#">Submissions</a></li>
+  </ul></div></li>
+  <li>
+  <a href="#">Mobile App</a>
+  <div><ul>
+  <li><a href="#">iOS</a></li>
+  <li><a href="#">Android</a></li>
+  <li><a href="#">Amazon</a></li>
+  <li><a href="#">Windows</a></li>
+  <li><a href="#">Chrome OS</a></li>
+  </ul></div></li>
+  <li>
+  <a href="#">Smart TV's</a>
+  <div><ul>
+  <li><a href="#">Roku</a></li>
+  <li><a href="#">Amazon Fire TV</a></li>
+  </ul></div></li>
+  <li>
+  <a href="#">Support Forum</a>
+  </li>
+  <li>
+  <a href="#">Contact Us</a>
+  </li>
+  </ul></nav></div>
       </p>
       <Button onClick={() => setShowMessage(false)}>
         Close
       </Button>
     </Alert>
   </CSSTransition>
-  
+
 </Container>
 
 
