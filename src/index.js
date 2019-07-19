@@ -7,7 +7,9 @@ import {HashRouter} from 'react-router-dom';
 import {AppContainer} from 'react-hot-loader';
 
 const render = (Component) => {
-  ReactDOM.render(<div><AppContainer>
+  ReactDOM.render(<div>
+    
+    <AppContainer>
     <HashRouter>
       <Component/>
     </HashRouter>

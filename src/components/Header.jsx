@@ -1,6 +1,7 @@
-import React from 'react';
-import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBNavLink, MDBContainer, MDBMask, MDBView, MDBCol, MDBIcon} from 'mdbreact';
+import React, { Fragment } from 'react';
+import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBNavLink, MDBContainer, MDBMask, MDBView, MDBCol, MDBIcon,MDBBtn} from 'mdbreact';
 import { BrowserRouter as Router } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import pic from '../assets/img/mahjong.jpeg';
 
 class Header extends React.Component {
@@ -25,29 +26,36 @@ class Header extends React.Component {
         <header>
           <Router>
             <MDBNavbar color="indigo" dark expand="md" fixed="top">
-              <MDBNavbarBrand href="/">
-                <strong>Navbar</strong>
-              </MDBNavbarBrand>
+
               {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
               <MDBCollapse isOpen={this.state.collapse} navbar>
                 <MDBNavbarNav left>
-                  <MDBNavItem active>
-                    <MDBNavLink to="#">Home</MDBNavLink>
-                  </MDBNavItem>
-                  <MDBNavItem>
-                    <MDBNavLink to="#">Link</MDBNavLink>
-                  </MDBNavItem>
-                  <MDBNavItem>
-                    <MDBNavLink to="#">Profile</MDBNavLink>
-                  </MDBNavItem>
+
+                 <a className="btn-floating btn-lg btn-fb" type="button" role="button"><i className="fab fa-facebook-f"></i></a>
+
+
+                 <a className="btn-floating btn-lg btn-tw" type="button" role="button"><i className="fab fa-twitter"></i></a>
+
+                 <a className="btn-floating btn-lg btn-gplus" type="button" role="button"><i className="fab fa-google-plus-g"></i></a>
+
                 </MDBNavbarNav>
+
+                <MDBNavbarNav right>
+                    <MDBNavItem active>
+                      <MDBNavLink to="/about">About us</MDBNavLink>
+                    </MDBNavItem>
+                    <MDBNavItem>
+                      <MDBNavLink to="howitworks">How it works</MDBNavLink>
+                    </MDBNavItem>
+                  </MDBNavbarNav>
+
               </MDBCollapse>
             </MDBNavbar>
           </Router>
 
           <MDBView src={pic}>
             <MDBMask overlay="black-light" className="flex-center flex-column text-white text-center">
-              <div class="d-flex align-items-center">.
+              <div className="d-flex align-items-center">.
               <MDBCol md="9">
                 <h1>Board Game Rent</h1>
                 <h5>It will always stay visible on the top, even when you scroll down</h5>
@@ -57,7 +65,11 @@ class Header extends React.Component {
                   <MDBIcon icon="search" />
                   <input className="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search" />
                 </form>
+                <Fragment>
+                  <MDBBtn gradient="purple">Filter</MDBBtn>
+                </Fragment>
               </MDBCol>
+
             </div>
             </MDBMask>
           </MDBView>
