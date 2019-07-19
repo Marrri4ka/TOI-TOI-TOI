@@ -3,6 +3,7 @@ import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse,
 import { BrowserRouter as Router } from 'react-router-dom';
 import {Link} from 'react-router-dom';
 import pic from '../assets/img/mahjong.jpeg';
+import './styles.css';
 
 
 class Header extends React.Component {
@@ -49,6 +50,9 @@ class Header extends React.Component {
                     </MDBNavItem>
                     <MDBNavItem>
                       <MDBNavLink to="/howitworks">How it works</MDBNavLink>
+                    </MDBNavItem>
+                    <MDBNavItem>
+                      <MDBNavLink to="/rentcart">Rent cart</MDBNavLink>
                     </MDBNavItem>
                   </MDBNavbarNav>
 
