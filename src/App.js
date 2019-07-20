@@ -7,6 +7,7 @@ import Demo from './components/Demo';
 import HowItWorks from './components/HowItWorks';
 import RentCart from './components/RentCart';
 import PaymentMethod from './components/PaymentMethod';
+import NewGame from './components/NewGame';
 
 import { Switch, Route } from 'react-router-dom';
 
@@ -20,6 +21,19 @@ import "mdbreact/dist/css/mdb.css";
 class App extends React.Component{
   constructor(props) {
     super(props);
+
+    this.state={
+      masterGameList: []
+    };
+
+    this.handleAddNewGame=this.handleAddNewGame.bind(this);
+  }
+
+
+  handleAddNewGame(newGame){
+    var newGameList = this.state.masterGameList.slice();
+    newGameList.push(newGame);
+    this.setState({masterGameList: newGameList});
   }
   render() {
     return (
@@ -31,8 +45,10 @@ class App extends React.Component{
 
         <Route path='/about' component={AboutUs}/>
         <Route path='/howitworks' component={HowItWorks}/>
-          <Route path='/rentcart' component={RentCart}/>
-            <Route path='/pay' component={PaymentMethod}/>
+        <Route path='/rentcart' component={RentCart}/>
+        <Route path='/pay' component={PaymentMethod}/>
+        <Route path='/newGame' render={()=><NewGame onNewCreation={this.handleAddNewGame}/>}/>
+
         </Switch>
 
 
