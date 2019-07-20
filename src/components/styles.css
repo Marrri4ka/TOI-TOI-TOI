@@ -16,8 +16,8 @@
     transition: opacity 300ms, transform 300ms;
   }
 
-  .indigo {
-      background-color: white !important;
+  .mynavbarbackground {
+      background-color: red ;
   }
 
   .paymentWrap {
@@ -87,9 +87,10 @@
   .indigo {
     background-color: red !important;
 }
+/*My Filter*/
 
   .support-menu * {margin: 0;padding: 0;outline: none;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
-div.support-menu {margin: 20px auto;width: 350px;}
+div.support-menu {margin: 20px auto;width: 350px; z-index: 3}
 .support-menu nav.vertical {border-radius: 4px;box-shadow: 0 0 10px rgba(0,0,0,.15);overflow: hidden;text-align: center;}
 .support-menu nav.vertical > ul {list-style-type: none;}
 .support-menu nav.vertical > ul > li {display: block;}

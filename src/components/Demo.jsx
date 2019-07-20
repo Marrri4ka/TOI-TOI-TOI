@@ -10,7 +10,7 @@ export default class Demo extends React.Component {
   };
 
   handleMouseMove = ({pageX, pageY}) => {
-    alert("test");
+
     // Make sure the state is queued and not batched.
     this.setState(() => {
       return {
@@ -21,7 +21,7 @@ export default class Demo extends React.Component {
   };
 
   handleTouchMove = (e) => {
-    alert("test2");
+
     e.preventDefault();
     this.handleMouseMove(e.touches[0]);
   };

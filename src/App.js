@@ -11,6 +11,7 @@ import NewGame from './components/NewGame';
 import GameList from './components/GameList';
 
 import { Switch, Route } from 'react-router-dom';
+import Home from './components/Home';
 
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
@@ -40,10 +41,8 @@ class App extends React.Component{
     return (
 
     <div>
-      <Demo/>
-        <Header/>
         <Switch>
-
+        <Route  exact path='/' component={Home}/>
         <Route path='/about' component={AboutUs}/>
         <Route path='/howitworks' component={HowItWorks}/>
         <Route path='/rentcart' component={RentCart}/>
@@ -55,7 +54,7 @@ class App extends React.Component{
 
 
 
-      <Footer/>
+
     </div>
     );
   }

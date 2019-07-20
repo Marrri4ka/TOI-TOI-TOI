@@ -48,6 +48,7 @@ function handleNewGameFormSubmission(e){
               ref={(input) => {_rate = input;}}
 
            />
+      
            <br />
 
            <div className="text-center mt-4">

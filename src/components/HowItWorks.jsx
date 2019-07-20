@@ -1,5 +1,5 @@
-import React , {useState}from 'react';
-import {  Link } from 'react-router-dom';
+import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 import { Container, Button, Alert } from 'react-bootstrap';
 import { CSSTransition } from 'react-transition-group';
 import './styles.css';
@@ -9,7 +9,7 @@ import './styles.css';
 function HowItWorks (props){
 
   const [showButton, setShowButton] = useState(true);
-const [showMessage, setShowMessage] = useState(false);
+  const [showMessage, setShowMessage] = useState(false);
   return(
     <Container style={{ paddingTop: '2rem' }}>
   {showButton && (
