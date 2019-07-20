@@ -8,6 +8,7 @@ import HowItWorks from './components/HowItWorks';
 import RentCart from './components/RentCart';
 import PaymentMethod from './components/PaymentMethod';
 import NewGame from './components/NewGame';
+import GameList from './components/GameList';
 
 import { Switch, Route } from 'react-router-dom';
 
@@ -48,6 +49,7 @@ class App extends React.Component{
         <Route path='/rentcart' component={RentCart}/>
         <Route path='/pay' component={PaymentMethod}/>
         <Route path='/newGame' render={()=><NewGame onNewCreation={this.handleAddNewGame}/>}/>
+        <Route path='/allgames' render={()=><GameList gameListPropperty={this.state.masterGameList}/>}/>
 
         </Switch>
 
