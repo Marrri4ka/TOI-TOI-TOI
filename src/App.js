@@ -35,8 +35,10 @@ class App extends React.Component{
     let gameListDb = [];
     let thisObj = this;
     axios.get('.json').then(function(response){
+
       Object.keys(response.data).forEach(function(key){
         gameListDb.push(response.data[key]);
+
       })
 
       thisObj.setState({masterGameList: gameListDb, filteredList: gameListDb});
@@ -59,7 +61,7 @@ class App extends React.Component{
 
     filterMore10(){
       let filtered = this.state.masterGameList.filter(m=>
-      (m.averageRating)>8);
+      (m.averageRating)>=5 &&   (m.averageRating) <=7);
       this.setState({masterGameList: this.state.masterGameList, filteredList:filtered});
 
     }

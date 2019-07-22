@@ -111,12 +111,7 @@ class Header extends React.Component {
         >
         Filter
         </MDBBtn>
-        <MDBBtn gradient="purple"
-          onClick={() => this.props.filterMore10()}
-          size="lg"
-        >
-        Filter
-        </MDBBtn>
+
           </Fragment>
       )}
       <CSSTransition
@@ -128,52 +123,43 @@ class Header extends React.Component {
         onExited={() => this.setShowButton(true)}
       >
         <Alert
-          variant="primary"
+          variant="red"
           dismissible
           onClose={() => this.setShowMessage(false)}
         >
-          <Alert.Heading>
-            Filters
-          </Alert.Heading>
+        
           <p>
             <div class="support-menu">
       <nav class="vertical">
       <ul><li>
-      <a href="#">SparkkTV.com</a>
+      <a href="#">Rating</a>
       <div><ul>
-      <li><a href="#">General</a></li>
-      <li><a href="#">My Account</a></li>
-      <li><a href="#">Watching</a></li>
-      <li><a href="#">How To's</a></li>
-      <li><a href="#">Site Features</a></li>
-      <li><a href="#">Submissions</a></li>
+      <li   onClick={() => this.props.filterMore10()}><a href="#">5-7 </a></li>
+
+      <li><a href="#">7-9</a></li>
+
       </ul></div></li>
       <li>
-      <a href="#">Mobile App</a>
+      <a href="#">Playtime</a>
       <div><ul>
-      <li><a href="#">iOS</a></li>
-      <li><a href="#">Android</a></li>
-      <li><a href="#">Amazon</a></li>
-      <li><a href="#">Windows</a></li>
-      <li><a href="#">Chrome OS</a></li>
+      <li><a href="#">30-60 min</a></li>
+      <li><a href="#"> more than 60 min</a></li>
+
       </ul></div></li>
       <li>
-      <a href="#">Smart TV's</a>
+      <a href="#">Players</a>
       <div><ul>
-      <li><a href="#">Roku</a></li>
-      <li><a href="#">Amazon Fire TV</a></li>
+      <li><a href="#">1-2</a></li>
+      <li><a href="#">2-4</a></li>
+      <li><a href="#">4-6</a></li>
+      <li><a href="#">more than 6</a></li>
       </ul></div></li>
-      <li>
-      <a href="#">Support Forum</a>
-      </li>
-      <li>
-      <a href="#">Contact Us</a>
-      </li>
       </ul></nav></div>
           </p>
-          <Button onClick={() => this.setShowMessage(false)}>
-            Close
-          </Button>
+
+          <Fragment>
+        <MDBBtn onClick={() => this.setShowMessage(false)} gradient="purple">Close</MDBBtn>
+         </Fragment>
         </Alert>
       </CSSTransition>
 
