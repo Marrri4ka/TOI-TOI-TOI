@@ -173,14 +173,45 @@ class Header extends React.Component {
 
         <main>
           <MDBContainer className="text-center my-5">
-          {
-          this.props.gameListDb.map((game,index)=>
+
+          <h1 class="text-center">Team Design Section with Pure CSS Effect</h1>
 
 
-            <img src = {game.image} height='100px' width='100px'/>
+ <div class="container">
+ <div class="row">
 
-          )
-          }
+
+ {
+         this.props.gameListDb.map((game,index)=>
+
+<div class="col-lg-4">
+
+ <div class="our-team-main">
+
+ <div class="team-front">
+    <img src = {game.image} height='100px' width='100px'/>
+ <h3>Dilip Kevat</h3>
+ <p>Web Designer</p>
+ </div>
+
+ <div class="team-back">
+ <span>
+ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+ natoque penatibus et magnis dis parturient montes,
+ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+ natoque.
+ </span>
+ </div>
+
+
+ </div>
+
+</div>
+)
+}
+
+ </div>
+ </div>
           </MDBContainer>
         </main>
       </div>
