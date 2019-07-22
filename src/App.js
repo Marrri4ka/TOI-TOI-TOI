@@ -27,19 +27,23 @@ class App extends React.Component{
     super(props);
 
     this.state={
-      masterGameList: []
+      masterGameList: [],
+      filteredList:[]
+
     };
 
     let gameListDb = [];
     let thisObj = this;
     axios.get('.json').then(function(response){
-      alert(response.data.length);
-      gameListDb = response.data;
+      Object.keys(response.data).forEach(function(key){
+        gameListDb.push(response.data[key]);
+      })
 
-      thisObj.setState({masterGameList: gameListDb});
+      thisObj.setState({masterGameList: gameListDb, filteredList: gameListDb});
     });
 
     this.handleAddNewGame=this.handleAddNewGame.bind(this);
+    this.filterMore10=this.filterMore10.bind(this);
   }
 
 
@@ -47,22 +51,30 @@ class App extends React.Component{
 
 
   handleAddNewGame(newGame){
-    var newGameList = this.state.masterGameList.slice();
-    newGameList.push(newGame);
-    this.setState({masterGameList: newGameList});
+    var gameListDb = this.state.masterGameList.slice();
+    gameListDb.push(newGame);
+    this.setState({masterGameList: gameListDb});
   }
+
+
+    filterMore10(){
+      let filtered = this.state.masterGameList.filter(m=>
+      (m.averageRating)>8);
+      this.setState({masterGameList: this.state.masterGameList, filteredList:filtered});
+
+    }
   render() {
     return (
 
     <div>
         <Switch>
-        <Route  exact path='/' render={()=><Home gameListDb={this.state.masterGameList}/>}/>
+        <Route  exact path='/' render={()=><Home gameListDb={this.state.masterGameList} filterMore10={this.filterMore10} gameList={this.state.filteredList}/>}/>
         <Route path='/about' component={AboutUs}/>
         <Route path='/howitworks' component={HowItWorks}/>
         <Route path='/rentcart' component={RentCart}/>
         <Route path='/pay' component={PaymentMethod}/>
         <Route path='/newGame' render={()=><NewGame onNewCreation={this.handleAddNewGame}/>}/>
-        <Route path='/allgames' render={()=><GameList gameListPropperty={this.state.masterGameList}/>}/>
+        <Route path='/allgames' render={()=><GameList gameListPropperty={this.state.filteredList}/>}/>
 
         </Switch>
 

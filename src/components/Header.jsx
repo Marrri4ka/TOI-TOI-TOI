@@ -22,6 +22,7 @@ class Header extends React.Component {
       showMessage: false
     };
     this.onClick = this.onClick.bind(this);
+
   }
   setShowButton(newValue){
     this.setState({
@@ -35,6 +36,7 @@ class Header extends React.Component {
 
     });
   }
+
 
   onClick() {
     this.setState({
@@ -105,6 +107,12 @@ class Header extends React.Component {
         <Fragment>
         <MDBBtn gradient="purple"
           onClick={() => this.setShowMessage(true)}
+          size="lg"
+        >
+        Filter
+        </MDBBtn>
+        <MDBBtn gradient="purple"
+          onClick={() => this.props.filterMore10()}
           size="lg"
         >
         Filter
@@ -182,7 +190,7 @@ class Header extends React.Component {
 
 
  {
-         this.props.gameListDb.map((game,index)=>
+         this.props.gameList.map((game,index)=>
 
 <div class="col-lg-4">
 
@@ -198,10 +206,10 @@ class Header extends React.Component {
  <center>
  <span>
  <h4>Players: {game.minPlayers} - {game.maxPlayers}</h4>
-  <h4>Playtime: {game.playingTime}</h4>
+  <h4>Playtime: {game.playingTime} minutes</h4>
   <h4>Rate: {game.averageRating}</h4>
   <Fragment>
-   <Link to='/rentcart'><center><MDBBtn gradient="peach">Rent</MDBBtn></center></Link>
+   <Link to='/rentcart'><center><MDBBtn  gradient="peach">Rent</MDBBtn></center></Link>
  </Fragment>
 
  </span>
@@ -225,7 +233,10 @@ class Header extends React.Component {
 }
 
 Header.propTypes={
-  gameListDb: PropTypes.array
+  gameList: PropTypes.array,
+  rent: PropTypes.func,
+  filterMore10: PropTypes.func
+
 }
 
 export default Header;
