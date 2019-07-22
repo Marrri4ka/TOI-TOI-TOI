@@ -195,11 +195,17 @@ class Header extends React.Component {
  </div>
 
  <div class="team-back">
+ <center>
  <span>
  <h4>Players: {game.minPlayers} - {game.maxPlayers}</h4>
   <h4>Playtime: {game.playingTime}</h4>
   <h4>Rate: {game.averageRating}</h4>
+  <Fragment>
+   <Link to='/rentcart'><center><MDBBtn gradient="peach">Rent</MDBBtn></center></Link>
+ </Fragment>
+
  </span>
+  </center>
  </div>
 
 

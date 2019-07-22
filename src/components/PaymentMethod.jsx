@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles.css';
-
+import {Link} from 'react-router-dom';
 function PaymentMethod(){
   return(
     <div class="container">
@@ -36,7 +36,7 @@ function PaymentMethod(){
   					        </div>
   						</div>
   						<div class="footerNavWrap clearfix">
-  							<div class="btn btn-success pull-left btn-fyi"><span class="glyphicon glyphicon-chevron-left"></span> CONTINUE SHOPPING</div>
+  						<Link to='./'>	<div class="btn btn-success pull-left btn-fyi"><span class="glyphicon glyphicon-chevron-left"></span> CONTINUE SHOPPING</div></Link>
   							<div class="btn btn-success pull-right btn-fyi">CHECKOUT<span class="glyphicon glyphicon-chevron-right"></span></div>
   						</div>
   					</div>
