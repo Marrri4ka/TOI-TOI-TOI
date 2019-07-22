@@ -31,9 +31,12 @@ class App extends React.Component{
     };
 
     let gameListDb = [];
+    let thisObj = this;
     axios.get('.json').then(function(response){
       alert(response.data.length);
       gameListDb = response.data;
+
+      thisObj.setState({masterGameList: gameListDb});
     });
 
     this.handleAddNewGame=this.handleAddNewGame.bind(this);

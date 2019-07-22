@@ -177,7 +177,8 @@ class Header extends React.Component {
           this.props.gameListDb.map((game,index)=>
 
 
-            <p align="justify">{game.name}</p>
+            <img src = {game.image} height='100px' width='100px'/>
+
           )
           }
           </MDBContainer>
