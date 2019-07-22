@@ -190,16 +190,15 @@ class Header extends React.Component {
 
  <div class="team-front">
     <img src = {game.image} height='100px' width='100px'/>
- <h3>Dilip Kevat</h3>
- <p>Web Designer</p>
+ <h3>{game.name}</h3>
+
  </div>
 
  <div class="team-back">
  <span>
- Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
- natoque penatibus et magnis dis parturient montes,
- Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
- natoque.
+ <h4>Players: {game.minPlayers} - {game.maxPlayers}</h4>
+  <h4>Playtime: {game.playingTime}</h4>
+  <h4>Rate: {game.averageRating}</h4>
  </span>
  </div>
 
