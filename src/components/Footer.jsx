@@ -9,7 +9,7 @@ render(){
 return(
 
 <div>
-<footer className="page-footer font-small blue">
+<footer className="page-footer font-small brown">
 
 
   <div className="footer-copyright text-center py-3">© 2019 Copyright:

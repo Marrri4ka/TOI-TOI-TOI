@@ -6,6 +6,7 @@ import pic from '../assets/img/mahjong.jpeg';
 import './styles.css';
 import { Container, Button, Alert } from 'react-bootstrap';
 import { CSSTransition } from 'react-transition-group';
+import PropTypes from 'prop-types';
 
 
 
@@ -51,16 +52,7 @@ class Header extends React.Component {
 
               {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
               <MDBCollapse isOpen={this.state.collapse} navbar>
-                <MDBNavbarNav left>
 
-                 <a className="btn-floating btn-lg btn-fb" type="button" role="button"><i className="fab fa-facebook-f"></i></a>
-
-
-                 <a className="btn-floating btn-lg btn-tw" type="button" role="button"><i className="fab fa-twitter"></i></a>
-
-                 <a className="btn-floating btn-lg btn-gplus" type="button" role="button"><i className="fab fa-google-plus-g"></i></a>
-
-                </MDBNavbarNav>
 
                 <MDBNavbarNav right>
                     <MDBNavItem active>
@@ -181,12 +173,22 @@ class Header extends React.Component {
 
         <main>
           <MDBContainer className="text-center my-5">
-            <p align="justify">Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          {
+          this.props.gameListDb.map((game,index)=>
+
+
+            <p align="justify">{game.name}</p>
+          )
+          }
           </MDBContainer>
         </main>
       </div>
     );
   }
+}
+
+Header.propTypes={
+  gameListDb: PropTypes.array
 }
 
 export default Header;

@@ -17,6 +17,8 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
 
+import axios from './axios-db';
+
 
 
 
@@ -28,8 +30,17 @@ class App extends React.Component{
       masterGameList: []
     };
 
+    let gameListDb = [];
+    axios.get('.json').then(function(response){
+      alert(response.data.length);
+      gameListDb = response.data;
+    });
+
     this.handleAddNewGame=this.handleAddNewGame.bind(this);
   }
+
+
+
 
 
   handleAddNewGame(newGame){
@@ -42,7 +53,7 @@ class App extends React.Component{
 
     <div>
         <Switch>
-        <Route  exact path='/' component={Home}/>
+        <Route  exact path='/' render={()=><Home gameListDb={this.state.masterGameList}/>}/>
         <Route path='/about' component={AboutUs}/>
         <Route path='/howitworks' component={HowItWorks}/>
         <Route path='/rentcart' component={RentCart}/>

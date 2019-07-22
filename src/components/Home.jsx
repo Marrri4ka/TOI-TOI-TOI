@@ -1,16 +1,21 @@
 import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
+import PropTypes from 'prop-types';
 
-function Home(){
+function Home(props){
   return(
     <div>
-      <Header/>
+      <Header gameListDb={props.gameListDb}/>
       <Footer/>
     </div>
 
   );
 
+}
+
+Home.propTypes = {
+  gameListDb: PropTypes.array
 }
 
 export default Home;
