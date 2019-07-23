@@ -23,7 +23,9 @@ function ShippingMethod(props){
 
           <input type="checkbox" id="box-3"/>
           <label for="box-3">We can explain reules for extra $5</label>
-          <Link to='/address'><button onClick={()=> handleSaveShippingInfo()}>Continue</button></Link>
+          <Link to='/address'><button onClick={()=> handleSaveShippingInfo()} class="btn btn-grey pull-left btn-fyi"><span class="glyphicon glyphicon-chevron-left"></span> Continue</button></Link>
+
+
         </div>
 
 

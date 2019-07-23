@@ -26,50 +26,21 @@ class RentCart extends React.Component{
       <div class="row">
       	 <br/>
                   <div class="col-md-12">
-                      <div class="col-md-4 col-sm-6 col-xs-12 col-md-push-6 col-sm-push-6">
 
-                          <div class="panel panel-default">
-                              <div class="panel-heading text-center">
-                                  <h4>Review Order</h4>
-                              </div>
-                              <div class="panel-body">
-                                      <div class="col-md-12">
-                                          <strong>Subtotal (# item)</strong>
-                                          <div class="pull-right"><span>$</span><span>200.00</span></div>
-                                      </div>
-                                      <div class="col-md-12">
-                                          <strong>Tax</strong>
-                                          <div class="pull-right"><span>$</span><span>200.00</span></div>
-                                      </div>
-                                      <div class="col-md-12">
-                                          <small>Shipping</small>
-                                          <div class="pull-right"><span>-</span></div>
-                                          <hr/>
-                                      </div>
-                                      <div class="col-md-12">
-                                          <strong>Order Total</strong>
-                                          <div class="pull-right"><span>$</span><span>{totalPrice}.00</span></div>
-                                          <hr/>
-                                      </div>
 
-                                      <Link to='/shippingmethod'><button type="button" class="btn btn-primary btn-lg btn-block">Checkout</button></Link>
 
-                                      <Link to='/'><button type="button" class="btn btn-primary btn-lg btn-block">Continue shopping</button></Link>
 
-                              </div>
 
-                          </div>
-
-                      </div>
                       <div class="col-md-8 col-sm-6 col-xs-12 col-md-pull-6 col-sm-pull-6">
 
                           <div class="panel panel-default">
                               <div class="panel-heading text-center"><h4>Current Cart</h4></div>
+
                               <div class="panel-body">
                                  <table class="table borderless">
           						<thead>
                                       <tr>
-              							<td><strong>Your Cart: # item</strong></td>
+
               							<td></td>
               							<td></td>
               							<td></td>
@@ -77,6 +48,8 @@ class RentCart extends React.Component{
                                       </tr>
           						</thead>
           						<tbody>
+
+
 
                       {
                           this.props.rentlist.map((m,index)=>
@@ -105,6 +78,14 @@ class RentCart extends React.Component{
                       )}
 
           						</tbody>
+                      <div class="col-md-12">
+                          <strong>Order Total</strong>
+                          <div class="pull-right"><span>$</span><span>{totalPrice}.00</span></div>
+                          <hr/>
+                      </div>
+                      <Link to='/shippingmethod'><button type="button" class="btn btn-grey btn-lg btn-block">Checkout</button></Link>
+
+                      <Link to='/'><button type="button" class="btn btn-grey btn-lg btn-block">Continue shopping</button></Link>
           					</table>
                               </div>
                           </div>

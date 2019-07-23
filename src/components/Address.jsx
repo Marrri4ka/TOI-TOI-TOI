@@ -1,8 +1,21 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 
-function Address(){
+function Address(props){
+
+  let _firstname = null;
+  let _lastname = null;
+  let _address = null;
+
+  function handleSaveAddress(){
+    alert(_firstname.value);
+    alert(_lastname.value);
+    alert(_address.value);
+    props.saveAddress(_firstname.value, _lastname.value, _address.value);
+
+  }
   return(
     <div class="container">
 
@@ -10,7 +23,6 @@ function Address(){
 <fieldset>
 
 
-<legend>Contact Us</legend>
 
 
 <div class="form-group">
@@ -18,7 +30,7 @@ function Address(){
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  name="first_name" placeholder="First Name" class="form-control"  type="text"/>
+  <input  name="first_name" placeholder="First Name" class="form-control"  type="text" ref = {(input)=>{_firstname=input;}}/>
     </div>
   </div>
 </div>
@@ -30,7 +42,7 @@ function Address(){
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input name="last_name" placeholder="Last Name" class="form-control"  type="text"/>
+  <input name="last_name" placeholder="Last Name" class="form-control"  type="text" ref = {(input)=>{_lastname=input;}}/>
     </div>
   </div>
 </div>
@@ -66,7 +78,7 @@ function Address(){
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-  <input name="address" placeholder="Address" class="form-control" type="text"/>
+  <input name="address" placeholder="Address" class="form-control" type="text"  ref = {(input)=>{_address=input;}}/>
     </div>
   </div>
 </div>
@@ -84,7 +96,7 @@ function Address(){
 
 
 <div class="form-group">
-  <label class="col-md-4 control-label">State</label>
+  <label class="col-md-4 control-label">Bar</label>
     <div class="col-md-4 selectContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
@@ -157,53 +169,33 @@ function Address(){
     </div>
 </div>
 </div>
-
+<div class="form-group">
+  <label class="col-md-4 control-label">Date</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  <input name="date" placeholder="date" class="form-control"  type="date"/>
+    </div>
+  </div>
+</div>
 
 <div class="form-group">
-  <label class="col-md-4 control-label">Website or domain name</label>
-   <div class="col-md-4 inputGroupContainer">
+  <label class="col-md-4 control-label">Time</label>
+    <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-  <input name="website" placeholder="Website or domain name" class="form-control" type="text"/>
+        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  <input name="city" placeholder="city" class="form-control"  type="time"/>
     </div>
   </div>
 </div>
 
 
- <div class="form-group">
-                        <label class="col-md-4 control-label">Do you have hosting?</label>
-                        <div class="col-md-4">
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="hosting" value="yes" /> Yes
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="hosting" value="no" /> No
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-
-<div class="form-group">
-  <label class="col-md-4 control-label">Project Description</label>
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-        	<textarea class="form-control" name="comment" placeholder="Project Description"></textarea>
-  </div>
-  </div>
-</div>
-
-<div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
 
 
 <div class="form-group">
   <label class="col-md-4 control-label"></label>
   <div class="col-md-4">
-    <Link to='/pay'><button type="submit" class="btn btn-warning" >Checkout <span class="glyphicon glyphicon-send"></span></button></Link>
+    <Link to='/pay'><button onClick={()=>handleSaveAddress()}type="submit" class="btn btn-grey pull-left btn-fyi"><span class="glyphicon glyphicon-chevron-left"></span>Checkout <span class="glyphicon glyphicon-send"></span></button></Link>
   </div>
 </div>
 
@@ -212,6 +204,10 @@ function Address(){
 </div>
 
   );
+}
+
+Address.propTypes = {
+saveAddress: PropTypes.func
 }
 
 export default Address;

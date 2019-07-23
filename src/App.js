@@ -33,7 +33,10 @@ class App extends React.Component{
       masterGameList: [],
       filteredList:[],
       rentlist:[],
-      isPickup: false
+      isPickup: false,
+      firstname: null,
+      lastname: null,
+      address: null
 
     };
 
@@ -54,6 +57,7 @@ class App extends React.Component{
     this.rent=this.rent.bind(this);
     this.removeFromList = this.removeFromList.bind(this);
     this.saveShippingInfo = this.saveShippingInfo.bind(this);
+    this.saveAddress = this.saveAddress.bind(this);
   }
 
 
@@ -90,6 +94,10 @@ class App extends React.Component{
     saveShippingInfo(isPickupNew){
       this.setState({isPickup:isPickupNew});
     }
+
+    saveAddress(_firstname,_lastname,_address){
+      this.setState({firstname:_firstname, lastname:_lastname, address:_address});
+    }
   render() {
     return (
 
@@ -103,8 +111,8 @@ class App extends React.Component{
         <Route path='/newGame' render={()=><NewGame onNewCreation={this.handleAddNewGame}/>}/>
         <Route path='/allgames' render={()=><GameList gameListPropperty={this.state.filteredList}/>}/>
         <Route path='/shippingmethod' render={()=><ShippingMethod saveShippingInfo={this.saveShippingInfo}/>}/>
-        <Route path='/address' component={Address}/>
-        <Route path='/pay' render={()=><PaymentMethod isPickup={this.state.isPickup}/>}/>
+        <Route path='/address' render={()=><Address saveAddress={this.saveAddress} firstname={this.state.firstname} lastname={this.state.lastname} address={this.state.address}/>}/>
+        <Route path='/pay' render={()=><PaymentMethod isPickup={this.state.isPickup}  firstname={this.state.firstname} lastname={this.state.lastname} address={this.state.address} />}/>
         <Route path='/admin' component={Admin}/>
 
         </Switch>

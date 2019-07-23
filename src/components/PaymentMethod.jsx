@@ -41,8 +41,8 @@ function PaymentMethod(props){
 					        </div>
 						</div>
 						<div class="footerNavWrap clearfix">
-							<div class="btn btn-success pull-left btn-fyi"><span class="glyphicon glyphicon-chevron-left"></span> CONTINUE SHOPPING</div>
-							<div class="btn btn-success pull-right btn-fyi">CHECKOUT<span class="glyphicon glyphicon-chevron-right"></span></div>
+							<Link to='/'><div class="btn btn-grey pull-left btn-fyi"><span class="glyphicon glyphicon-chevron-left"></span> CONTINUE SHOPPING</div></Link>
+							<div class="btn btn-grey pull-right btn-fyi">CHECKOUT<span class="glyphicon glyphicon-chevron-right"></span></div>
 						</div>
 					</div>
 
@@ -91,8 +91,8 @@ function PaymentMethod(props){
                             <div class="summary-content">
                                 <div class="summary-head"><h5 class="summary-title">Name</h5></div>
                                 <div class="summary-price">
-                                    <p class="summary-text">$29 / mo</p>
-                                    <span class="summary-small-text pull-right">1 month</span>
+                                    <p class="summary-text">{props.firstname} {props.lastname}</p>
+
                                 </div>
                             </div>
                         </div>
@@ -100,8 +100,8 @@ function PaymentMethod(props){
                             <div class="summary-content">
                                <div class="summary-head"> <h5 class="summary-title">Address</h5></div>
                                 <div class="summary-price">
-                                    <p class="summary-text">$229 / mo</p>
-                                    <span class="summary-small-text pull-right">1 month</span>
+                                    <p class="summary-text">{props.address}</p>
+                                    <span class="summary-small-text pull-right"></span>
                                 </div>
                             </div>
                         </div>
@@ -130,7 +130,8 @@ function PaymentMethod(props){
 }
 
 PaymentMethod.propTypes = {
-  isPickup: PropTypes.string
+  isPickup: PropTypes.string,
+  name: PropTypes.string
 }
 
 

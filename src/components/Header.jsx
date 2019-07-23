@@ -171,7 +171,7 @@ class Header extends React.Component {
         <main>
           <MDBContainer className="text-center my-5">
 
-          <h1 class="text-center">Team Design Section with Pure CSS Effect</h1>
+        
 
 
  <div class="container">
