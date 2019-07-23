@@ -12,6 +12,8 @@ import GameList from './components/GameList';
 
 import { Switch, Route } from 'react-router-dom';
 import Home from './components/Home';
+import ShippingMethod from './components/ShippingMethod';
+import Address from './components/Address';
 
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
@@ -83,9 +85,12 @@ class App extends React.Component{
         <Route path='/about' component={AboutUs}/>
         <Route path='/howitworks' component={HowItWorks}/>
         <Route path='/rentcart/:index' render={()=><RentCart masterGameList={this.state.masterGameList} rentlist={this.state.rentlist}/>}/>
-        <Route path='/pay' component={PaymentMethod}/>
+
         <Route path='/newGame' render={()=><NewGame onNewCreation={this.handleAddNewGame}/>}/>
         <Route path='/allgames' render={()=><GameList gameListPropperty={this.state.filteredList}/>}/>
+        <Route path='/shippingmethod' component={ShippingMethod}/>
+        <Route path='/address' component={Address}/>
+        <Route path='/pay' component={PaymentMethod}/>
 
         </Switch>
 

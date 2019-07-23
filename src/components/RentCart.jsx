@@ -63,13 +63,14 @@ class RentCart extends React.Component{
 						<div class="col-xs-9">
 							<h4 class="text-right">Total <strong>$50.00</strong></h4>
 						</div>
-            <div class="col-xs-6">
-            <Link to='/'>  <button type="button" class="btn btn-primary btn-sm btn-block">
-                <span class="glyphicon glyphicon-share-alt"></span> Continue renting
-              </button> </Link>
+
+            <div class="col-xs-3">
+              <Link to='/'><button type="button" class="btn btn-success btn-block">
+                Continue renting
+              </button></Link>
             </div>
 						<div class="col-xs-3">
-							<Link to='./pay'><button type="button" class="btn btn-success btn-block">
+							<Link to='/shippingmethod'><button type="button" class="btn btn-success btn-block">
 								Checkout
 							</button></Link>
 						</div>
