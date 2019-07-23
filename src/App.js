@@ -51,6 +51,7 @@ class App extends React.Component{
     this.handleAddNewGame=this.handleAddNewGame.bind(this);
     this.filterMore10=this.filterMore10.bind(this);
     this.rent=this.rent.bind(this);
+    this.removeFromList = this.removeFromList.bind(this);
   }
 
 
@@ -77,6 +78,12 @@ class App extends React.Component{
       this.setState({rentlist:newRentList});
 
     }
+
+    removeFromList(index){
+      var listAfterRemove = this.state.rentlist.slice();
+      listAfterRemove.splice(index,1);
+      this.setState({rentlist:listAfterRemove});
+    }
   render() {
     return (
 
@@ -85,7 +92,7 @@ class App extends React.Component{
         <Route  exact path='/' render={()=><Home rent = {this.rent}  gameListDb={this.state.masterGameList} filterMore10={this.filterMore10} gameList={this.state.filteredList}/>}/>
         <Route path='/about' component={AboutUs}/>
         <Route path='/howitworks' component={HowItWorks}/>
-        <Route path='/rentcart/:index' render={()=><RentCart masterGameList={this.state.masterGameList} rentlist={this.state.rentlist}/>}/>
+        <Route path='/rentcart/:index' render={()=><RentCart masterGameList={this.state.masterGameList} rentlist={this.state.rentlist} removeFromList={this.removeFromList} />}/>
 
         <Route path='/newGame' render={()=><NewGame onNewCreation={this.handleAddNewGame}/>}/>
         <Route path='/allgames' render={()=><GameList gameListPropperty={this.state.filteredList}/>}/>
