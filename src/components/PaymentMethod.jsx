@@ -13,7 +13,7 @@ function PaymentMethod(props){
 		<div class="paymentCont">
 						<div class="headingWrap">
 								<h3 class="headingTop text-center">Select Your Payment Method</h3>
-								<p class="text-center">Created with bootsrap button and using radio button</p>
+							
 						</div>
 						<div class="paymentWrap">
 							<div class="btn-group paymentBtnGroup btn-group-justified" data-toggle="buttons">
