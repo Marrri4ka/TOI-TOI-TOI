@@ -32,7 +32,8 @@ class App extends React.Component{
     this.state={
       masterGameList: [],
       filteredList:[],
-      rentlist:[]
+      rentlist:[],
+      isPickup: false
 
     };
 
@@ -52,6 +53,7 @@ class App extends React.Component{
     this.filterMore10=this.filterMore10.bind(this);
     this.rent=this.rent.bind(this);
     this.removeFromList = this.removeFromList.bind(this);
+    this.saveShippingInfo = this.saveShippingInfo.bind(this);
   }
 
 
@@ -84,6 +86,10 @@ class App extends React.Component{
       listAfterRemove.splice(index,1);
       this.setState({rentlist:listAfterRemove});
     }
+
+    saveShippingInfo(isPickupNew){
+      this.setState({isPickup:isPickupNew});
+    }
   render() {
     return (
 
@@ -96,9 +102,9 @@ class App extends React.Component{
 
         <Route path='/newGame' render={()=><NewGame onNewCreation={this.handleAddNewGame}/>}/>
         <Route path='/allgames' render={()=><GameList gameListPropperty={this.state.filteredList}/>}/>
-        <Route path='/shippingmethod' component={ShippingMethod}/>
+        <Route path='/shippingmethod' render={()=><ShippingMethod saveShippingInfo={this.saveShippingInfo}/>}/>
         <Route path='/address' component={Address}/>
-        <Route path='/pay' component={PaymentMethod}/>
+        <Route path='/pay' render={()=><PaymentMethod isPickup={this.state.isPickup}/>}/>
         <Route path='/admin' component={Admin}/>
 
         </Switch>
