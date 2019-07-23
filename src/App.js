@@ -14,6 +14,7 @@ import { Switch, Route } from 'react-router-dom';
 import Home from './components/Home';
 import ShippingMethod from './components/ShippingMethod';
 import Address from './components/Address';
+import Admin from './components/Admin';
 
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
@@ -91,6 +92,7 @@ class App extends React.Component{
         <Route path='/shippingmethod' component={ShippingMethod}/>
         <Route path='/address' component={Address}/>
         <Route path='/pay' component={PaymentMethod}/>
+        <Route path='/admin' component={Admin}/>
 
         </Switch>
 
