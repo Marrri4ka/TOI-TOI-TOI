@@ -28,7 +28,8 @@ class App extends React.Component{
 
     this.state={
       masterGameList: [],
-      filteredList:[]
+      filteredList:[],
+      rentlist:[]
 
     };
 
@@ -46,6 +47,7 @@ class App extends React.Component{
 
     this.handleAddNewGame=this.handleAddNewGame.bind(this);
     this.filterMore10=this.filterMore10.bind(this);
+    this.rent=this.rent.bind(this);
   }
 
 
@@ -65,15 +67,22 @@ class App extends React.Component{
       this.setState({masterGameList: this.state.masterGameList, filteredList:filtered});
 
     }
+
+    rent(index){
+      var newRentList = this.state.rentlist.slice();
+      newRentList.push(this.state.masterGameList[index]);
+      this.setState({rentlist:newRentList});
+
+    }
   render() {
     return (
 
     <div>
         <Switch>
-        <Route  exact path='/' render={()=><Home gameListDb={this.state.masterGameList} filterMore10={this.filterMore10} gameList={this.state.filteredList}/>}/>
+        <Route  exact path='/' render={()=><Home rent = {this.rent}  gameListDb={this.state.masterGameList} filterMore10={this.filterMore10} gameList={this.state.filteredList}/>}/>
         <Route path='/about' component={AboutUs}/>
         <Route path='/howitworks' component={HowItWorks}/>
-        <Route path='/rentcart' component={RentCart}/>
+        <Route path='/rentcart/:index' render={()=><RentCart masterGameList={this.state.masterGameList} rentlist={this.state.rentlist}/>}/>
         <Route path='/pay' component={PaymentMethod}/>
         <Route path='/newGame' render={()=><NewGame onNewCreation={this.handleAddNewGame}/>}/>
         <Route path='/allgames' render={()=><GameList gameListPropperty={this.state.filteredList}/>}/>

@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 function Home(props){
   return(
     <div>
-      <Header  gameList={props.gameList} filterMore10={props.filterMore10} />
+      <Header  gameList={props.gameList} filterMore10={props.filterMore10} rent = {props.rent}/>
       <Footer/>
     </div>
 
@@ -16,7 +16,8 @@ function Home(props){
 
 Home.propTypes = {
   gameList: PropTypes.array,
-  filterMore10: PropTypes.func
+  filterMore10: PropTypes.func,
+  rent: PropTypes.func
 }
 
 export default Home;

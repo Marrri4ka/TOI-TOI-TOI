@@ -1,11 +1,22 @@
 import React from 'react';
 import './styles.css';
 import {Link} from 'react-router-dom';
+import PropTypes from 'prop-types';
+import  {withRouter} from 'react-router';
 
 
 
-function RentCart(){
+class RentCart extends React.Component{
+  constructor(props){
+    super(props);
+  }
+  render(){
+
+    let index = this.props.match.params.index;
   return(
+
+
+
     <div class="container">
 	<div class="row">
 		<div class="col-xs-8">
@@ -21,12 +32,14 @@ function RentCart(){
 					</div>
 				</div>
 				<div class="panel-body">
+        {
+          this.props.rentlist.map((m,index)=>
 
 					<div class="row">
 						<div class="col-xs-2"><img class="img-responsive" src="http://placehold.it/100x70"/>
 						</div>
 						<div class="col-xs-4">
-							<h4 class="product-name"><strong>Product name</strong></h4><h4><small>Product description</small></h4>
+							<h4 class="product-name"><strong>Product name</strong></h4><h4><small>{m.name}</small></h4>
 						</div>
 						<div class="col-xs-6">
 							<div class="col-xs-6 text-right">
@@ -42,7 +55,7 @@ function RentCart(){
 							</div>
 						</div>
 					</div>
-					<hr/>
+			)}
 
 				</div>
 				<div class="panel-footer">
@@ -68,10 +81,16 @@ function RentCart(){
 	</div>
 </div>
 
+
   );
+}
+}
+
+RentCart.propTypes={
+  masterGameList: PropTypes.array,
+  rentlist: PropTypes.array
 }
 
 
 
-
-export default RentCart;
+export default withRouter(RentCart);

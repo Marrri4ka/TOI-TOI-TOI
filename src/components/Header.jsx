@@ -127,7 +127,7 @@ class Header extends React.Component {
           dismissible
           onClose={() => this.setShowMessage(false)}
         >
-        
+
           <p>
             <div class="support-menu">
       <nav class="vertical">
@@ -195,7 +195,7 @@ class Header extends React.Component {
   <h4>Playtime: {game.playingTime} minutes</h4>
   <h4>Rate: {game.averageRating}</h4>
   <Fragment>
-   <Link to='/rentcart'><center><MDBBtn  gradient="peach">Rent</MDBBtn></center></Link>
+   <Link to={'/rentcart/'+index}><center><MDBBtn onClick={()=>this.props.rent(index)}gradient="peach">Rent</MDBBtn></center></Link>
  </Fragment>
 
  </span>
