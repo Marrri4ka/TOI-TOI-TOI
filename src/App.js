@@ -41,7 +41,8 @@ class App extends React.Component{
       lastname: null,
       address: null,
       time: null,
-      date: null
+      date: null,
+      poetFilter:''
 
     };
 
@@ -63,6 +64,7 @@ class App extends React.Component{
     this.removeFromList = this.removeFromList.bind(this);
     this.saveShippingInfo = this.saveShippingInfo.bind(this);
     this.saveAddress = this.saveAddress.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
 
@@ -76,7 +78,7 @@ class App extends React.Component{
   }
 
 
-    filterMore10(minRating, maxRating, minTime,maxTime, minPlayers, maxPlayers){
+    filterMore10(minRating, maxRating, minTime,maxTime, minPlayers, maxPlayers,word){
       let filtered = this.state.masterGameList.filter(m=>
       (m.averageRating)>=minRating &&   (m.averageRating) <=maxRating &&
       (m.playingTime)>=minTime &&   (m.playingTime) <=maxTime &&
@@ -107,12 +109,30 @@ class App extends React.Component{
     saveAddress(_firstname,_lastname,_address,_time,_date){
       this.setState({firstname:_firstname, lastname:_lastname, address:_address, time:_time, date:_date});
     }
+
+    handleChange = (e) => {
+          alert(e.target.value);
+          var newList = this.state.masterGameList.filter(m=>
+            m.name.toLowerCase().includes(e.target.value.toLowerCase())
+        );
+        console.log(newList);
+          this.setState({
+
+            masterGameList: newList
+          });
+
+
+   }
+
+
+
+
   render() {
     return (
 
     <div>
         <Switch>
-        <Route  exact path='/' render={()=><Home rent = {this.rent}  gameListDb={this.state.masterGameList} filterMore10={this.filterMore10} gameList={this.state.filteredList}/>}/>
+        <Route  exact path='/' render={()=><Home handleChange = {this.handleChange} rent = {this.rent}  gameListDb={this.state.masterGameList} filterMore10={this.filterMore10} gameList={this.state.filteredList} />}/>
         <Route path='/about' component={AboutUs}/>
         <Route path='/howitworks' component={HowItWorks}/>
         <Route path='/rentcart/:index' render={()=><RentCart masterGameList={this.state.masterGameList} rentlist={this.state.rentlist} removeFromList={this.removeFromList} />}/>

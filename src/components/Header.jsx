@@ -12,16 +12,26 @@ import PropTypes from 'prop-types';
 
 class Header extends React.Component {
 
+
+
   constructor(props) {
+
+
+
 
     super(props);
     this.state = {
       collapse: false,
       isWideEnough: false,
       showButton: true,
-      showMessage: false
+      showMessage: false,
+      poetFilter: ""
+
+
     };
     this.onClick = this.onClick.bind(this);
+
+
 
   }
   setShowButton(newValue){
@@ -44,6 +54,10 @@ class Header extends React.Component {
     });
   }
 
+
+
+
+
   render() {
     return (
       <div>
@@ -63,12 +77,7 @@ class Header extends React.Component {
                     <MDBNavItem>
                       <MDBNavLink to="/howitworks">How it works</MDBNavLink>
                     </MDBNavItem>
-                    <MDBNavItem>
-                      <MDBNavLink to="/rentcart">Rent cart</MDBNavLink>
-                    </MDBNavItem>
-                    <MDBNavItem>
-                      <MDBNavLink to="/pay">Pay</MDBNavLink>
-                    </MDBNavItem>
+
                     <MDBNavItem>
                       <MDBNavLink to="/newGame">New Game</MDBNavLink>
                     </MDBNavItem>
@@ -89,9 +98,15 @@ class Header extends React.Component {
                 <h5>It will always stay visible on the top, even when you scroll down</h5>
                 <br />
 
-                <form className="form-inline mt-4 mb-4">
+                <form    onChange={this.props.handleChange} className="form-inline mt-4 mb-4">
                   <MDBIcon icon="search" />
-                  <input className="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search" />
+                  <input className="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"  id="filter"
+                    defaultValue={this.state.poetFilter}
+
+                     aria-label="Search" />
+
+
+
                 </form>
 
 
@@ -224,7 +239,8 @@ class Header extends React.Component {
 Header.propTypes={
   gameList: PropTypes.array,
   rent: PropTypes.func,
-  filterMore10: PropTypes.func
+  filterMore10: PropTypes.func,
+  handleChange: PropTypes.func
 
 }
 
