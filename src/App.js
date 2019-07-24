@@ -15,6 +15,7 @@ import Home from './components/Home';
 import ShippingMethod from './components/ShippingMethod';
 import Address from './components/Address';
 import Admin from './components/Admin';
+import Error404 from './components/Error404';
 
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
@@ -114,6 +115,7 @@ class App extends React.Component{
         <Route path='/address' render={()=><Address saveAddress={this.saveAddress} firstname={this.state.firstname} lastname={this.state.lastname} address={this.state.address}/>}/>
         <Route path='/pay' render={()=><PaymentMethod isPickup={this.state.isPickup}  firstname={this.state.firstname} lastname={this.state.lastname} address={this.state.address} />}/>
         <Route path='/admin' component={Admin}/>
+        <Route component={Error404}/>
 
         </Switch>
 
