@@ -7,8 +7,8 @@ function ShippingMethod(props){
   let _pickUp = null;
 
   function handleSaveShippingInfo(){
-    alert(_pickUp.value);
-    props.saveShippingInfo(_pickUp.value);
+    alert(_pickUp.checked);
+    props.saveShippingInfo(_pickUp.checked);
 
   }
   return(

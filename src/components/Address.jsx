@@ -8,12 +8,12 @@ function Address(props){
   let _firstname = null;
   let _lastname = null;
   let _address = null;
+  let _time = null;
+  let _date = null;
 
   function handleSaveAddress(){
-    alert(_firstname.value);
-    alert(_lastname.value);
-    alert(_address.value);
-    props.saveAddress(_firstname.value, _lastname.value, _address.value);
+
+    props.saveAddress(_firstname.value, _lastname.value, _address.value, _time.value, _date.value);
 
   }
   return(
@@ -174,7 +174,7 @@ function Address(props){
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-  <input name="date" placeholder="date" class="form-control"  type="date"/>
+  <input name="date" placeholder="date" class="form-control"  type="date" ref = {(input)=>{_date=input;}}/>
     </div>
   </div>
 </div>
@@ -184,7 +184,7 @@ function Address(props){
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-  <input name="city" placeholder="city" class="form-control"  type="time"/>
+  <input name="city" placeholder="city" class="form-control"  type="time" ref = {(input)=>{_time=input;}}/>
     </div>
   </div>
 </div>

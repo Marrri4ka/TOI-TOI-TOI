@@ -13,7 +13,7 @@ function PaymentMethod(props){
 		<div class="paymentCont">
 						<div class="headingWrap">
 								<h3 class="headingTop text-center">Select Your Payment Method</h3>
-							
+
 						</div>
 						<div class="paymentWrap">
 							<div class="btn-group paymentBtnGroup btn-group-justified" data-toggle="buttons">
@@ -109,8 +109,17 @@ function PaymentMethod(props){
                             <div class="summary-content">
                                <div class="summary-head"> <h5 class="summary-title">Time</h5></div>
                                 <div class="summary-price">
-                                    <p class="summary-text">$258 / mo</p>
-                                    <span class="summary-small-text pull-right">1 month</span>
+                                    <p class="summary-text">{props.time}</p>
+                                    <span class="summary-small-text pull-right"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="summary-block">
+                            <div class="summary-content">
+                               <div class="summary-head"> <h5 class="summary-title">Date</h5></div>
+                                <div class="summary-price">
+                                    <p class="summary-text">{props.date}</p>
+                                    <span class="summary-small-text pull-right"></span>
                                 </div>
                             </div>
                         </div>
