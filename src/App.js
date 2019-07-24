@@ -76,9 +76,13 @@ class App extends React.Component{
   }
 
 
-    filterMore10(){
+    filterMore10(minRating, maxRating, minTime,maxTime, minPlayers, maxPlayers){
       let filtered = this.state.masterGameList.filter(m=>
-      (m.averageRating)>=5 &&   (m.averageRating) <=7);
+      (m.averageRating)>=minRating &&   (m.averageRating) <=maxRating &&
+      (m.playingTime)>=minTime &&   (m.playingTime) <=maxTime &&
+      (m.minPlayers)>=minPlayers &&   (m.maxPlayers)<= maxPlayers
+
+     );
       this.setState({masterGameList: this.state.masterGameList, filteredList:filtered});
 
     }

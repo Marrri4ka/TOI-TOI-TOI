@@ -137,25 +137,25 @@ class Header extends React.Component {
       <ul><li>
       <a href="#">Rating</a>
       <div><ul>
-      <li   onClick={() => this.props.filterMore10()}><a href="#">5-7 </a></li>
-
-      <li><a href="#">7-9</a></li>
-
+      <li   onClick={() => this.props.filterMore10(5,7,0,400,0,10)}><a href="#">5-7 </a></li>
+      <li   onClick={() => this.props.filterMore10(8,9,0,400,0,60)}><a href="#">8-9 </a></li>
       </ul></div></li>
       <li>
       <a href="#">Playtime</a>
       <div><ul>
-      <li><a href="#">30-60 min</a></li>
-      <li><a href="#"> more than 60 min</a></li>
+      <li   onClick={() => this.props.filterMore10(0,10,30,60,0,10)}><a href="#">30-60 min </a></li>
+      <li   onClick={() => this.props.filterMore10(0,10,60,500,0,20)}><a href="#"> more than 60 min </a></li>
+
 
       </ul></div></li>
       <li>
       <a href="#">Players</a>
       <div><ul>
-      <li><a href="#">1-2</a></li>
-      <li><a href="#">2-4</a></li>
-      <li><a href="#">4-6</a></li>
-      <li><a href="#">more than 6</a></li>
+
+    <li   onClick={() => this.props.filterMore10(0,10,0,400,1,2)}><a href="#">1-2</a></li>
+    <li   onClick={() => this.props.filterMore10(0,10,0,400,2,6)}><a href="#">2-6</a></li>
+    <li   onClick={() => this.props.filterMore10(0,10,0,400,6,80)}><a href="#">more than 6</a></li>
+
       </ul></div></li>
       </ul></nav></div>
           </p>
@@ -171,7 +171,7 @@ class Header extends React.Component {
         <main>
           <MDBContainer className="text-center my-5">
 
-        
+
 
 
  <div class="container">
