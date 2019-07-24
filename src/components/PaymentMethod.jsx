@@ -3,6 +3,23 @@ import './styles.css';
 import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 function PaymentMethod(props){
+
+
+  let totalGames = 5* props.rentlist.length;
+  let totalShipping = 0;
+
+
+  if(props.isPickup === true){
+    totalShipping+=0;
+  }
+  if(props.explainRules===true){
+    totalShipping+=5;
+  }
+
+  if(props.seattleArea === true){
+    totalShipping+=5;
+  }
+  let total = totalGames + totalShipping;
   return(
     <div class="content">
 <div class="container">
@@ -61,8 +78,8 @@ function PaymentMethod(props){
                             <div class="summary-content">
                                 <div class="summary-head"><h5 class="summary-title">Games</h5></div>
                                 <div class="summary-price">
-                                    <p class="summary-text">$29 / mo</p>
-                                    <span class="summary-small-text pull-right">1 month</span>
+                                    <p class="summary-text">${totalGames}.00</p>
+                                    <span class="summary-small-text pull-right"></span>
                                 </div>
                             </div>
                         </div>
@@ -70,8 +87,8 @@ function PaymentMethod(props){
                             <div class="summary-content">
                                <div class="summary-head"> <h5 class="summary-title">Shipping</h5></div>
                                 <div class="summary-price">
-                                    <p class="summary-text">$229 / mo</p>
-                                    <span class="summary-small-text pull-right">1 month</span>
+                                    <p class="summary-text">${totalShipping}.00</p>
+                                    <span class="summary-small-text pull-right"></span>
                                 </div>
                             </div>
                         </div>
@@ -79,8 +96,8 @@ function PaymentMethod(props){
                             <div class="summary-content">
                                <div class="summary-head"> <h5 class="summary-title">Total</h5></div>
                                 <div class="summary-price">
-                                    <p class="summary-text">$258 / mo</p>
-                                    <span class="summary-small-text pull-right">1 month</span>
+                                    <p class="summary-text">$ {total}.00</p>
+                                    <span class="summary-small-text pull-right"></span>
                                 </div>
                             </div>
                         </div>
@@ -139,8 +156,11 @@ function PaymentMethod(props){
 }
 
 PaymentMethod.propTypes = {
-  isPickup: PropTypes.string,
-  name: PropTypes.string
+  isPickup: PropTypes.bool,
+  explainRules: PropTypes.bool,
+  seattleArea: PropTypes.bool,
+  name: PropTypes.string,
+  rentlist: PropTypes.array
 }
 
 

@@ -35,6 +35,8 @@ class App extends React.Component{
       filteredList:[],
       rentlist:[],
       isPickup: false,
+      seattleArea: false,
+      explainRules: false,
       firstname: null,
       lastname: null,
       address: null,
@@ -94,8 +96,8 @@ class App extends React.Component{
       this.setState({rentlist:listAfterRemove});
     }
 
-    saveShippingInfo(isPickupNew){
-      this.setState({isPickup:isPickupNew});
+    saveShippingInfo(isPickupNew,seattleAreaNew,explainRulesNew){
+      this.setState({isPickup:isPickupNew, seattleArea: seattleAreaNew, explainRules: explainRulesNew });
     }
 
     saveAddress(_firstname,_lastname,_address,_time,_date){
@@ -115,7 +117,7 @@ class App extends React.Component{
         <Route path='/allgames' render={()=><GameList gameListPropperty={this.state.filteredList}/>}/>
         <Route path='/shippingmethod' render={()=><ShippingMethod saveShippingInfo={this.saveShippingInfo}/>}/>
         <Route path='/address' render={()=><Address saveAddress={this.saveAddress} firstname={this.state.firstname} lastname={this.state.lastname} address={this.state.address} time={this.state.time} date={this.state.date}/>}/>
-        <Route path='/pay' render={()=><PaymentMethod isPickup={this.state.isPickup}  firstname={this.state.firstname} lastname={this.state.lastname} address={this.state.address} time={this.state.time} date={this.state.date}/>}/>
+        <Route path='/pay' render={()=><PaymentMethod rentlist={this.state.rentlist} isPickup={this.state.isPickup}  seattleArea={this.state.seattleArea}  explainRules={this.state.explainRules}  firstname={this.state.firstname} lastname={this.state.lastname} address={this.state.address} time={this.state.time} date={this.state.date}/>}/>
         <Route path='/admin' component={Admin}/>
         <Route component={Error404}/>
 
