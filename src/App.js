@@ -26,9 +26,6 @@ import "mdbreact/dist/css/mdb.css";
 
 import axios from './axios-db';
 
-
-
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -73,10 +70,6 @@ class App extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-
-
-
-
   handleAddNewGame(newGame) {
     var gameListDb = this.state.masterGameList.slice();
     gameListDb.push(newGame);
@@ -84,7 +77,6 @@ class App extends React.Component {
       masterGameList: gameListDb
     });
   }
-
 
   filterMore10(minRating, maxRating, minTime, maxTime, minPlayers, maxPlayers, word) {
     let filtered = this.state.masterGameList.filter(m =>
@@ -97,7 +89,6 @@ class App extends React.Component {
       masterGameList: this.state.masterGameList,
       filteredList: filtered
     });
-
   }
 
   rent(index) {
@@ -144,9 +135,6 @@ class App extends React.Component {
     });
   }
 
-
-
-
   render() {
     return (
 
@@ -166,11 +154,7 @@ class App extends React.Component {
         <Route component={Error404}/>
 
         </Switch>
-
-
-
-
-    </div>
+      </div>
     );
   }
 }
