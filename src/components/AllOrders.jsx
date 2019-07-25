@@ -6,52 +6,57 @@ import { MDBBtn } from "mdbreact";
 class AllOrders extends React.Component{
     constructor(props){
     super(props);
+
   };
 
+  componentDidMount(){
+    this.props.getInfo();
+  }
 
   render(){
     return(
       <div class="container">
 
-        <div class="row">
-          {
-             this.props.orderListDb.map((order,index)=>
+      <div class="row">
+        {
+           this.props.orderListDb.map((order,index)=>
 
 
 
 
 
 
-            <div class="col-md-4">
+          <div class="col-md-4">
 
 
 
 
 
 
-                    <hr />
-                    <p>
-                    {order.firstname}
+                  <hr />
+                  <p>
+                  {order.firstname}
 
 
-                    </p>
-                      <MDBBtn color="unique">Complete</MDBBtn>
-                    <hr />
-
-
-
-
-
-            </div>
-              )}
+                  </p>
+                    <MDBBtn color="unique">Complete</MDBBtn>
+                  <hr />
 
 
 
 
 
+          </div>
+            )}
 
-        </div>
-    </div>
+
+
+
+
+
+      </div>
+  </div>
+
 
   );
 }

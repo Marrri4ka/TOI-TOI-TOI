@@ -49,8 +49,19 @@ class App extends React.Component {
 
     };
 
+    this.handleAddNewGame = this.handleAddNewGame.bind(this);
+    this.filterMore10 = this.filterMore10.bind(this);
+    this.rent = this.rent.bind(this);
+    this.removeFromList = this.removeFromList.bind(this);
+    this.saveShippingInfo = this.saveShippingInfo.bind(this);
+    this.saveAddress = this.saveAddress.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.getInfo = this.getInfo.bind(this);
+  }
+
+  getInfo(){
+    let that = this;
     let gameListDb = [];
-    let thisObj = this;
     axios.get('/games.json').then(function(response) {
 
       Object.keys(response.data).forEach(function(key) {
@@ -58,7 +69,7 @@ class App extends React.Component {
 
       })
 
-      thisObj.setState({
+      that.setState({
         masterGameList: gameListDb,
         filteredList: gameListDb
       });
@@ -67,7 +78,7 @@ class App extends React.Component {
 
     let orderListDb = [];
     axios.get('/orders.json').then(function(response) {
-      if(response.data === null){
+      if(response.data !== null){
 
       Object.keys(response.data).forEach(function(key) {
         orderListDb.push(response.data[key]);
@@ -77,18 +88,15 @@ class App extends React.Component {
 
 
 
-    thisObj.setState({
+    that.setState({
       orderList: orderListDb
     });
-        });
+    });
 
-    this.handleAddNewGame = this.handleAddNewGame.bind(this);
-    this.filterMore10 = this.filterMore10.bind(this);
-    this.rent = this.rent.bind(this);
-    this.removeFromList = this.removeFromList.bind(this);
-    this.saveShippingInfo = this.saveShippingInfo.bind(this);
-    this.saveAddress = this.saveAddress.bind(this);
-    this.handleChange = this.handleChange.bind(this);
+  }
+
+  componentDidMount(){
+    this.getInfo();
   }
 
   handleAddNewGame(newGame) {
@@ -172,7 +180,7 @@ class App extends React.Component {
         <Route path='/address' render={()=><Address saveAddress={this.saveAddress} firstname={this.state.firstname} lastname={this.state.lastname} address={this.state.address} time={this.state.time} date={this.state.date}/>}/>
         <Route path='/pay' render={()=><PaymentMethod rentlist={this.state.rentlist} isPickup={this.state.isPickup}  seattleArea={this.state.seattleArea}  explainRules={this.state.explainRules}  firstname={this.state.firstname} lastname={this.state.lastname} address={this.state.address} time={this.state.time} date={this.state.date}/>}/>
         <Route path='/admin' component={Admin}/>
-        <Route path='/allorders' render={()=><AllOrders orderListDb={this.state.orderList}/>}/>
+        <Route path='/allorders' render={()=><AllOrders getInfo={this.getInfo} orderListDb={this.state.orderList}/>}/>
         <Route path='/confirmation' render={()=><Confirmation isPickup={this.state.isPickup}  seattleArea={this.state.seattleArea}  explainRules={this.state.explainRules}  saveShippingInfo={this.saveShippingInfo} rentlist={this.state.rentlist} firstname={this.state.firstname} lastname={this.state.lastname} address={this.state.address} time={this.state.time} date={this.state.date} />}/>
         <Route component={Error404}/>
 
