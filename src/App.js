@@ -10,7 +10,10 @@ import PaymentMethod from './components/PaymentMethod';
 import NewGame from './components/NewGame';
 import GameList from './components/GameList';
 
-import { Switch, Route } from 'react-router-dom';
+import {
+  Switch,
+  Route
+} from 'react-router-dom';
 import Home from './components/Home';
 import ShippingMethod from './components/ShippingMethod';
 import Address from './components/Address';
@@ -26,14 +29,14 @@ import axios from './axios-db';
 
 
 
-class App extends React.Component{
+class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state={
+    this.state = {
       masterGameList: [],
-      filteredList:[],
-      rentlist:[],
+      filteredList: [],
+      rentlist: [],
       isPickup: false,
       seattleArea: false,
       explainRules: false,
@@ -42,25 +45,28 @@ class App extends React.Component{
       address: null,
       time: null,
       date: null,
-      poetFilter:''
+      poetFilter: ''
 
     };
 
     let gameListDb = [];
     let thisObj = this;
-    axios.get('.json').then(function(response){
+    axios.get('.json').then(function(response) {
 
-      Object.keys(response.data).forEach(function(key){
+      Object.keys(response.data).forEach(function(key) {
         gameListDb.push(response.data[key]);
 
       })
 
-      thisObj.setState({masterGameList: gameListDb, filteredList: gameListDb});
+      thisObj.setState({
+        masterGameList: gameListDb,
+        filteredList: gameListDb
+      });
     });
 
-    this.handleAddNewGame=this.handleAddNewGame.bind(this);
-    this.filterMore10=this.filterMore10.bind(this);
-    this.rent=this.rent.bind(this);
+    this.handleAddNewGame = this.handleAddNewGame.bind(this);
+    this.filterMore10 = this.filterMore10.bind(this);
+    this.rent = this.rent.bind(this);
     this.removeFromList = this.removeFromList.bind(this);
     this.saveShippingInfo = this.saveShippingInfo.bind(this);
     this.saveAddress = this.saveAddress.bind(this);
@@ -71,58 +77,72 @@ class App extends React.Component{
 
 
 
-  handleAddNewGame(newGame){
+  handleAddNewGame(newGame) {
     var gameListDb = this.state.masterGameList.slice();
     gameListDb.push(newGame);
-    this.setState({masterGameList: gameListDb});
+    this.setState({
+      masterGameList: gameListDb
+    });
   }
 
 
-    filterMore10(minRating, maxRating, minTime,maxTime, minPlayers, maxPlayers,word){
-      let filtered = this.state.masterGameList.filter(m=>
-      (m.averageRating)>=minRating &&   (m.averageRating) <=maxRating &&
-      (m.playingTime)>=minTime &&   (m.playingTime) <=maxTime &&
-      (m.minPlayers)>=minPlayers &&   (m.maxPlayers)<= maxPlayers
+  filterMore10(minRating, maxRating, minTime, maxTime, minPlayers, maxPlayers, word) {
+    let filtered = this.state.masterGameList.filter(m =>
+      (m.averageRating) >= minRating && (m.averageRating) <= maxRating &&
+      (m.playingTime) >= minTime && (m.playingTime) <= maxTime &&
+      (m.minPlayers) >= minPlayers && (m.maxPlayers) <= maxPlayers
 
-     );
-      this.setState({masterGameList: this.state.masterGameList, filteredList:filtered});
+    );
+    this.setState({
+      masterGameList: this.state.masterGameList,
+      filteredList: filtered
+    });
 
-    }
+  }
 
-    rent(index){
-      var newRentList = this.state.rentlist.slice();
-      newRentList.push(this.state.masterGameList[index]);
-      this.setState({rentlist:newRentList});
+  rent(index) {
+    var newRentList = this.state.rentlist.slice();
+    newRentList.push(this.state.masterGameList[index]);
+    this.setState({
+      rentlist: newRentList
+    });
 
-    }
+  }
 
-    removeFromList(index){
-      var listAfterRemove = this.state.rentlist.slice();
-      listAfterRemove.splice(index,1);
-      this.setState({rentlist:listAfterRemove});
-    }
+  removeFromList(index) {
+    var listAfterRemove = this.state.rentlist.slice();
+    listAfterRemove.splice(index, 1);
+    this.setState({
+      rentlist: listAfterRemove
+    });
+  }
 
-    saveShippingInfo(isPickupNew,seattleAreaNew,explainRulesNew){
-      this.setState({isPickup:isPickupNew, seattleArea: seattleAreaNew, explainRules: explainRulesNew });
-    }
+  saveShippingInfo(isPickupNew, seattleAreaNew, explainRulesNew) {
+    this.setState({
+      isPickup: isPickupNew,
+      seattleArea: seattleAreaNew,
+      explainRules: explainRulesNew
+    });
+  }
 
-    saveAddress(_firstname,_lastname,_address,_time,_date){
-      this.setState({firstname:_firstname, lastname:_lastname, address:_address, time:_time, date:_date});
-    }
+  saveAddress(_firstname, _lastname, _address, _time, _date) {
+    this.setState({
+      firstname: _firstname,
+      lastname: _lastname,
+      address: _address,
+      time: _time,
+      date: _date
+    });
+  }
 
-    handleChange = (e) => {
-          alert(e.target.value);
-          var newList = this.state.masterGameList.filter(m=>
-            m.name.toLowerCase().includes(e.target.value.toLowerCase())
-        );
-        console.log(newList);
-          this.setState({
-
-            masterGameList: newList
-          });
-
-
-   }
+  handleChange = (e) => {
+    var newList = this.state.masterGameList.filter(m =>
+      m.name.toLowerCase().includes(e.target.value.toLowerCase())
+    );
+    this.setState({
+      masterGameList: newList
+    });
+  }
 
 
 
@@ -130,7 +150,7 @@ class App extends React.Component{
   render() {
     return (
 
-    <div>
+      <div>
         <Switch>
         <Route  exact path='/' render={()=><Home handleChange = {this.handleChange} rent = {this.rent}  gameListDb={this.state.masterGameList} filterMore10={this.filterMore10} gameList={this.state.filteredList} />}/>
         <Route path='/about' component={AboutUs}/>
