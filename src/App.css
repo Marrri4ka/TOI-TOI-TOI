@@ -59,6 +59,11 @@
   margin-left: 10px;
 }
 
+.shippingForm {
+  width: 50%;
+  margin-left : 40%;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
