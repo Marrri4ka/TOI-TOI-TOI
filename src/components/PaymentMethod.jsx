@@ -2,7 +2,32 @@ import React from 'react';
 import './styles.css';
 import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
+import Confirmation from './Confirmation';
+import axios from '../axios-db';
+import {withRouter} from 'react-router-dom';
 function PaymentMethod(props){
+
+  function saveOrder(){
+    const newOrder = {
+     firstname: props.firstname,
+     lastname: props.lastname,
+     address: props.address,
+     time: props.time,
+     date: props.date,
+     rentlist: props.rentlist,
+     isPickup: props.isPickup,
+     explainRules: props.explainRules,
+     seattleArea: props.seattleArea
+
+
+
+
+ };
+ axios
+   .post("/orders.json", newOrder)
+   .then(response => props.history.push('/confirmation'))
+   .catch(error => console.log(error));
+  }
 
 
   let totalGames = 5* props.rentlist.length;
@@ -59,7 +84,7 @@ function PaymentMethod(props){
 						</div>
 						<div class="footerNavWrap clearfix">
 							<Link to='/'><div class="btn btn-grey pull-left btn-fyi"><span class="glyphicon glyphicon-chevron-left"></span> CONTINUE SHOPPING</div></Link>
-							<div class="btn btn-grey pull-right btn-fyi">CHECKOUT<span class="glyphicon glyphicon-chevron-right"></span></div>
+							<div onClick={()=> saveOrder()}class="btn btn-grey pull-right btn-fyi">CHECKOUT<span class="glyphicon glyphicon-chevron-right"></span></div>
 						</div>
 					</div>
 
@@ -159,9 +184,14 @@ PaymentMethod.propTypes = {
   isPickup: PropTypes.bool,
   explainRules: PropTypes.bool,
   seattleArea: PropTypes.bool,
-  name: PropTypes.string,
-  rentlist: PropTypes.array
+  firstname: PropTypes.string,
+  lastname: PropTypes.string,
+  address: PropTypes.string,
+  time: PropTypes.string,
+  date: PropTypes.string,
+  rentlist: PropTypes.array,
+
 }
 
 
-export default PaymentMethod;
+export default withRouter( PaymentMethod);

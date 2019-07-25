@@ -9,6 +9,7 @@ import RentCart from './components/RentCart';
 import PaymentMethod from './components/PaymentMethod';
 import NewGame from './components/NewGame';
 import GameList from './components/GameList';
+import Confirmation from './components/Confirmation';
 
 import {
   Switch,
@@ -48,7 +49,7 @@ class App extends React.Component {
 
     let gameListDb = [];
     let thisObj = this;
-    axios.get('.json').then(function(response) {
+    axios.get('/games.json').then(function(response) {
 
       Object.keys(response.data).forEach(function(key) {
         gameListDb.push(response.data[key]);
@@ -151,6 +152,7 @@ class App extends React.Component {
         <Route path='/address' render={()=><Address saveAddress={this.saveAddress} firstname={this.state.firstname} lastname={this.state.lastname} address={this.state.address} time={this.state.time} date={this.state.date}/>}/>
         <Route path='/pay' render={()=><PaymentMethod rentlist={this.state.rentlist} isPickup={this.state.isPickup}  seattleArea={this.state.seattleArea}  explainRules={this.state.explainRules}  firstname={this.state.firstname} lastname={this.state.lastname} address={this.state.address} time={this.state.time} date={this.state.date}/>}/>
         <Route path='/admin' component={Admin}/>
+        <Route path='/confirmation' render={()=><Confirmation isPickup={this.state.isPickup}  seattleArea={this.state.seattleArea}  explainRules={this.state.explainRules}  saveShippingInfo={this.saveShippingInfo} rentlist={this.state.rentlist} firstname={this.state.firstname} lastname={this.state.lastname} address={this.state.address} time={this.state.time} date={this.state.date} />}/>
         <Route component={Error404}/>
 
         </Switch>
