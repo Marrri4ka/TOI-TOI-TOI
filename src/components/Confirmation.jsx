@@ -31,10 +31,11 @@ class Confirmation extends React.Component{
 
   return (
     <div>
-    <div class="content">
+
+    <div class="content confirmationForm">
 <div class="container">
  <div class="row">
-              <div class="col-lg-8 col-md-8 col-sm-7 col-xs-12">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                   <div class="box">
                       <center><h3 class="box-title">Thank you for the renting!</h3></center>
                       <div class="plan-selection">
