@@ -22,7 +22,7 @@ class RentCart extends React.Component {
         <div class="row">
       	  <br/>
           <div class="col-md-12">
-            <div class="col-md-8 col-sm-6 col-xs-12 col-md-pull-6 col-sm-pull-6">
+            <div class="col-md-12 col-sm-12 col-xs-12 col-md-pull-12 col-sm-pull-12">
               <div class="panel panel-default">
                 <div class="panel-heading text-center">
                   <h4>Current Cart</h4>
@@ -60,8 +60,8 @@ class RentCart extends React.Component {
                             </td>
           							</tr>
                         )}
-
           					</tbody>
+                  </table>
                     <div class="col-md-12">
                       <strong>Order Total</strong>
                       <div class="pull-right">
@@ -84,7 +84,6 @@ class RentCart extends React.Component {
                         Continue shopping
                       </button>
                     </Link>
-          				</table>
                 </div>
               </div>
             </div>
