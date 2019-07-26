@@ -325,15 +325,12 @@ body {
   min-height: 100%;
 }
 
-html,
-body {
-    height: 100%;
-}
-
 .gradient-background {
   background-image: linear-gradient(to bottom right, #7E6278, #C9C5C4);
   height: 100%;
   padding-top: 20px;
+  height: 100%;
+  min-height: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 { letter-spacing: 0px; font-weight: 400; color: black; margin: 0px 0px 15px 0px; font-family: 'Noto Sans', sans-serif; }

@@ -90,7 +90,7 @@ function Address(props){
                   <div class="col-md-4 selectContainer">
                     <div class="input-group">
                       <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                      <select name="state" class="form-control selectpicker" style={{width: 1200 + 'px'}}>
+                      <select name="state" class="form-control selectpicker" style={{width: 100 + 'px'}}>
                         <option value=" " >Please select your state</option>
                         <option>Alabama</option>
                         <option>Alaska</option>

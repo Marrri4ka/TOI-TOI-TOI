@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import Confirmation from './Confirmation';
 import axios from '../axios-db';
 import {withRouter} from 'react-router-dom';
+
 function PaymentMethod(props){
 
   function saveOrder(){
@@ -18,21 +19,16 @@ function PaymentMethod(props){
      isPickup: props.isPickup,
      explainRules: props.explainRules,
      seattleArea: props.seattleArea
-
-
-
-
- };
- axios
-   .post("/orders.json", newOrder)
-   .then(response => props.history.push('/confirmation'))
-   .catch(error => console.log(error));
+   };
+   axios
+     .post("/orders.json", newOrder)
+     .then(response => props.history.push('/confirmation'))
+     .catch(error => console.log(error));
   }
 
 
-  let totalGames = 5* props.rentlist.length;
+  let totalGames = 5 * props.rentlist.length;
   let totalShipping = 0;
-
 
   if(props.isPickup === true){
     totalShipping+=0;
@@ -169,14 +165,8 @@ function PaymentMethod(props){
 
                 </div>
             </div>
-
-
-
-
-
-
-</div>
-</div>
+    </div>
+    </div>
   );
 }
 
