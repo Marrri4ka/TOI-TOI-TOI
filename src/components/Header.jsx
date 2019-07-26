@@ -207,16 +207,16 @@ class Header extends React.Component {
 
                  <div class="team-front">
                     <img src = {game.image} height='100px' width='100px'/>
-                 <h3>{game.name}</h3>
+                 <h6>{game.name}</h6>
 
                  </div>
 
                  <div class="team-back">
                  <center>
                  <span>
-                 <h4>Players: {game.minPlayers} - {game.maxPlayers}</h4>
-                  <h4>Playtime: {game.playingTime} minutes</h4>
-                  <h4>Rate: {Math.round(game.averageRating * 10) / 10}</h4>
+                 <h6>Players: {game.minPlayers} - {game.maxPlayers}</h6>
+                  <h6>Playtime: {game.playingTime} minutes</h6>
+                  <h6>Rate: {Math.round(game.averageRating * 10) / 10}</h6>
                   <Fragment>
                    <Link to={'/rentcart/'+index}><center><MDBBtn onClick={()=>this.props.rent(index)}gradient="peach">Rent</MDBBtn></center></Link>
                  </Fragment>
