@@ -57,7 +57,7 @@ class App extends React.Component {
     this.saveAddress = this.saveAddress.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.getInfo = this.getInfo.bind(this);
-    this.delete = this.delete.bind(this);
+    this.deleteOrder = this.deleteOrder.bind(this);
   }
 
   getInfo(){
@@ -138,6 +138,17 @@ class App extends React.Component {
     });
   }
 
+
+  deleteOrder(index){
+    var newOrderList = this.state.orderList.slice();
+    newOrderList.splice(index,1);
+    this.setState({
+      orderList: newOrderList
+
+    });
+
+  }
+
   saveShippingInfo(isPickupNew, seattleAreaNew, explainRulesNew) {
     this.setState({
       isPickup: isPickupNew,
@@ -157,7 +168,7 @@ class App extends React.Component {
   }
 
   delete(){
-    alert('delete');
+
   }
 
   handleChange = (e) => {
@@ -185,7 +196,7 @@ class App extends React.Component {
         <Route path='/address' render={()=><Address saveAddress={this.saveAddress} firstname={this.state.firstname} lastname={this.state.lastname} address={this.state.address} time={this.state.time} date={this.state.date}/>}/>
         <Route path='/pay' render={()=><PaymentMethod rentlist={this.state.rentlist} isPickup={this.state.isPickup}  seattleArea={this.state.seattleArea}  explainRules={this.state.explainRules}  firstname={this.state.firstname} lastname={this.state.lastname} address={this.state.address} time={this.state.time} date={this.state.date}/>}/>
         <Route path='/admin' component={Admin}/>
-        <Route path='/allorders' render={()=><AllOrders delete={this.delete} isPickup={this.state.isPickup}  seattleArea={this.state.seattleArea}  explainRules={this.state.explainRules} getInfo={this.getInfo} orderListDb={this.state.orderList}/>}/>
+        <Route path='/allorders' render={()=><AllOrders deleteOrder={this.deleteOrder} isPickup={this.state.isPickup}  seattleArea={this.state.seattleArea}  explainRules={this.state.explainRules} getInfo={this.getInfo} orderListDb={this.state.orderList}/>}/>
         <Route path='/confirmation' render={()=><Confirmation isPickup={this.state.isPickup}  seattleArea={this.state.seattleArea}  explainRules={this.state.explainRules}  saveShippingInfo={this.saveShippingInfo} rentlist={this.state.rentlist} firstname={this.state.firstname} lastname={this.state.lastname} address={this.state.address} time={this.state.time} date={this.state.date} />}/>
         <Route component={Error404}/>
 

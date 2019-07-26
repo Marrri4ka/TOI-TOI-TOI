@@ -2,6 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { MDBBtn } from "mdbreact";
 import {Link} from 'react-router-dom';
+import {
+  withRouter
+} from 'react-router';
+
 
 
 class AllOrders extends React.Component{
@@ -23,7 +27,7 @@ class AllOrders extends React.Component{
   render(){
 
 
-
+    let index = this.props.match.params.index;
     let pickup="";
     let explainMe ="";
     let delivery ="";
@@ -82,7 +86,7 @@ class AllOrders extends React.Component{
 
 
 
-                    <MDBBtn onClick={()=>this.props.delete()} color="unique">Complete</MDBBtn>
+                    <MDBBtn onClick={()=>this.props.deleteOrder(index)} color="unique">Complete</MDBBtn>
                   <hr />
 
 
@@ -110,7 +114,7 @@ AllOrders.propTypes = {
   isPickup: PropTypes.bool,
   explainRules: PropTypes.bool,
   seattleArea: PropTypes.bool,
-  delete: PropTypes.func
+  deleteOrder: PropTypes.func
 }
 
-export default AllOrders;
+export default withRouter(AllOrders);
