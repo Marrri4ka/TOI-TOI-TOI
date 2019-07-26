@@ -78,7 +78,7 @@ function PaymentMethod(props){
 
 					        </div>
 						</div>
-						<div class="footerNavWrap clearfix">
+						<div class="footerNavWrap clearfix" align="center">
 							<Link to='/'><div class="btn btn-grey pull-left btn-fyi"><span class="glyphicon glyphicon-chevron-left"></span> CONTINUE SHOPPING</div></Link>
 							<div onClick={()=> saveOrder()}class="btn btn-grey pull-right btn-fyi">CHECKOUT<span class="glyphicon glyphicon-chevron-right"></span></div>
 						</div>

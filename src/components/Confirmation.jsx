@@ -20,11 +20,11 @@ class Confirmation extends React.Component{
         }
 
         if(this.props.explainRules===true){
-            explainMe+="Oh yeah, please explain us rules!"
+            explainMe+="Oh yeah, please explain us the rules!"
           }
 
           if(this.props.explainRules===false) {
-              explainMe+="No thanks,reading rules is a part of gaming!"
+              explainMe+="No thanks, reading rules is a part of gaming!"
           }
 
 
@@ -36,7 +36,7 @@ class Confirmation extends React.Component{
  <div class="row">
               <div class="col-lg-8 col-md-8 col-sm-7 col-xs-12">
                   <div class="box">
-                      <center><h3 class="box-title">Than you for renting!</h3></center>
+                      <center><h3 class="box-title">Thank you for the renting!</h3></center>
                       <div class="plan-selection">
                           <div class="plan-data">
 
