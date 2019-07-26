@@ -27,6 +27,7 @@ import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
 
 import axios from './axios-db';
+import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 
 class App extends React.Component {
   constructor(props) {
@@ -97,6 +98,24 @@ class App extends React.Component {
   }
 
   componentDidMount(){
+    auth.onAuthStateChanged(async userAuth => {
+    if (userAuth) {
+      const userRef = await createUserProfileDocument(userAuth);
+
+      userRef.onSnapshot(snapShot => {
+        this.setState({
+          currentUser: {
+            id: snapShot.id,
+            ...snapShot.data()
+          }
+        });
+      });
+    } else {
+      this.setState({ currentUser: userAuth });
+    }
+  });
+
+
     this.getInfo();
   }
 
