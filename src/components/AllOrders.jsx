@@ -15,6 +15,10 @@ class AllOrders extends React.Component{
   }
 
 
+delete(){
+  alert('delete');
+}
+
 
   render(){
 
@@ -78,7 +82,7 @@ class AllOrders extends React.Component{
 
 
 
-                    <MDBBtn color="unique">Complete</MDBBtn>
+                    <MDBBtn onClick={()=>this.props.delete()} color="unique">Complete</MDBBtn>
                   <hr />
 
 
@@ -105,7 +109,8 @@ AllOrders.propTypes = {
   orderListDb: PropTypes.array,
   isPickup: PropTypes.bool,
   explainRules: PropTypes.bool,
-  seattleArea: PropTypes.bool
+  seattleArea: PropTypes.bool,
+  delete: PropTypes.func
 }
 
 export default AllOrders;
