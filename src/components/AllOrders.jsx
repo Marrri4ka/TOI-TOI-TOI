@@ -8,6 +8,8 @@ class AllOrders extends React.Component{
     constructor(props){
     super(props);
 
+
+
   };
 
   componentDidMount(){
@@ -15,9 +17,7 @@ class AllOrders extends React.Component{
   }
 
 
-delete(){
-  alert('delete');
-}
+
 
 
   render(){
