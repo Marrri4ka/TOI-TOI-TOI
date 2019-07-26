@@ -216,7 +216,7 @@ class Header extends React.Component {
                  <span>
                  <h4>Players: {game.minPlayers} - {game.maxPlayers}</h4>
                   <h4>Playtime: {game.playingTime} minutes</h4>
-                  <h4>Rate: {game.averageRating}</h4>
+                  <h4>Rate: {Math.round(game.averageRating * 10) / 10}</h4>
                   <Fragment>
                    <Link to={'/rentcart/'+index}><center><MDBBtn onClick={()=>this.props.rent(index)}gradient="peach">Rent</MDBBtn></center></Link>
                  </Fragment>
