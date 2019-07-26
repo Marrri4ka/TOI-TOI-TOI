@@ -387,3 +387,4 @@ input[type=radio].with-font:focus~label:before, input[type=checkbox].with-font:f
 .btn-default { background-color: #0943c6; color: #fff; border: 1px solid #0943c6; }
 .btn-default:hover { background-color: #063bb3; color: #fff; border: 1px solid #063bb3; }
 .btn-default.focus, .btn-default:focus { background-color: #063bb3; color: #fff; border: 1px solid #063bb3; }
+/* card payment*/

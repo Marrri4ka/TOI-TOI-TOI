@@ -25,6 +25,15 @@ class PaymentMethod extends React.Component{
   constructor(props){
     super(props);
 
+    this.state = {
+      collapse: false,
+      isWideEnough: false,
+      showButton: true,
+      showMessage: false,
+
+
+
+    };
     let totalGames = 5 * props.rentlist.length;
     let totalShipping = 0;
 
@@ -59,6 +68,26 @@ class PaymentMethod extends React.Component{
      .catch(error => console.log(error));
   }
 
+  setShowButton(newValue) {
+    this.setState({
+      showButton: newValue
+    });
+  }
+
+  setShowMessage(newValue) {
+    this.setState({
+      showMessage: newValue
+
+    });
+  }
+
+
+  onClick() {
+    this.setState({
+      collapse: !this.state.collapse
+    });
+  }
+
 
 
 
@@ -79,23 +108,23 @@ class PaymentMethod extends React.Component{
                   						<div class="paymentWrap">
                   							<div class="btn-group paymentBtnGroup btn-group-justified" data-toggle="buttons">
                   					            <label class="btn paymentMethod active">
-                  					            	<div class="method visa"></div>
+                  					            	<div    onClick={() => this.setShowMessage(true)} class="method visa"></div>
                   					                <input type="radio" name="options"/>
                   					            </label>
                   					            <label class="btn paymentMethod">
-                  					            	<div class="method master-card"></div>
+                  					            	<div   onClick={() => this.setShowMessage(true)} class="method master-card"></div>
                   					                <input type="radio" name="options"/>
                   					            </label>
                   					            <label class="btn paymentMethod">
-                  				            		<div class="method amex"></div>
+                  				            		<div    onClick={() => this.setShowMessage(true)}class="method amex"></div>
                   					                <input type="radio" name="options"/>
                   					            </label>
                   					             <label class="btn paymentMethod">
-                  				             		<div class="method vishwa"></div>
+                  				             		<div    onClick={() => this.setShowMessage(true)}class="method vishwa"></div>
                   					                <input type="radio" name="options"/>
                   					            </label>
                   					            <label class="btn paymentMethod">
-                  				            		<div class="method ez-cash"></div>
+                  				            		<div   onClick={() => this.setShowMessage(true)} class="method ez-cash"></div>
                   					                <input type="radio" name="options"/>
                   					            </label>
 
@@ -107,6 +136,109 @@ class PaymentMethod extends React.Component{
                   						</div>
                   		</div>
                     </div>
+
+                    <Container style={{ paddingTop: '2rem' }}>
+
+                    <CSSTransition
+                      in={this.state.showMessage}
+                      timeout={300}
+                      classNames="alert"
+                      unmountOnExit
+                      onEnter={() => this.setShowButton(false)}
+                      onExited={() => this.setShowButton(true)}
+                    >
+                    <Alert
+                      variant="red"
+                      dismissible
+                      onClose={() => this.setShowMessage(false)}
+                    >
+
+                      <p>
+                        <div class="support-menu">
+                          <nav class="vertical">
+                            <div class="container">
+  <div class="row">
+    <div class="span12">
+      <form class="form-horizontal span6">
+        <fieldset>
+          <legend>Payment</legend>
+
+          <div class="control-group">
+            <label class="control-label">Card Holder's Name</label>
+            <div class="controls">
+              <input type="text" class="input-block-level" pattern="\w+ \w+.*" title="Fill your first and last name" required/>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label">Card Number</label>
+            <div class="controls">
+              <div class="row-fluid">
+                <div class="span">
+                  <input type="text" class="input-block-level" autocomplete="off" maxlength="" pattern="\d{4}" title="First four digits" required/>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label">Card Expiry Date</label>
+            <div class="controls">
+              <div class="row-fluid">
+                <div class="span9">
+                  <select class="input-block-level">
+                    <option>January</option>
+                    <option>February</option>
+                    <option>December</option>
+                  </select>
+                </div>
+                <div class="span3">
+                  <select class="input-block-level">
+                    <option>2013</option>
+                    <option>...</option>
+                    <option>2015</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label">Card CVV</label>
+            <div class="controls">
+              <div class="row-fluid">
+                <div class="span3">
+                  <input type="text" class="input-block-level" autocomplete="off" maxlength="3" pattern="\d{3}" title="Three digits at back of your card" required/>
+                </div>
+                <div class="span8">
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-actions">
+                <Fragment>
+            <MDBBtn gradient="purple"  onClick={()=> this.saveOrder()} type="submit" class="btn btn-primary">Submit</MDBBtn>
+            <MDBBtn  onClick={() => this.setShowMessage(false)}  gradient="purple" type="button" class="btn">Cancel</MDBBtn>
+                   </Fragment>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+                        </nav>
+                      </div>
+                      </p>
+
+
+                    </Alert>
+                  </CSSTransition>
+                </Container>
 
                   </div>
                 </div>
