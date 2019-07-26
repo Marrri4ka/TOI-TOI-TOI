@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { MDBBtn } from "mdbreact";
+import {Link} from 'react-router-dom';
 
 
 class AllOrders extends React.Component{
@@ -23,19 +24,24 @@ class AllOrders extends React.Component{
     let explainMe ="";
     let delivery ="";
     if(this.props.isPickup===true){
-        pickup+="Pick up from store"
+        pickup+="I'll pick up games from store!"
       }
 
+
+
+
       if(this.props.seattleArea===true){
-          delivery+="Seattle area delivery"
+          delivery+="Please deliver to address you see above!"
         }
 
+
+
         if(this.props.explainRules===true){
-            explainMe+="Oh yeah, please explain us the rules!"
+            explainMe+="Please explain us the rules!"
           }
 
           if(this.props.explainRules===false) {
-              explainMe+="No thanks, reading rules is a part of gaming!"
+              explainMe+="Reading rules is a part of gaming!"
           }
 
 
@@ -62,11 +68,11 @@ class AllOrders extends React.Component{
                   <li>{order.address}</li>
                   <li>{order.time}</li>
                   <li>{order.date}</li>
-                  <li>{pickup}</li>
+                  <p>{pickup}</p>
 
 
-                  <li>{explainMe}</li>
-                  <li>{delivery}</li>
+                  <p>{explainMe}</p>
+                  <p>{delivery}</p>
 
 
 
@@ -96,7 +102,10 @@ class AllOrders extends React.Component{
 };
 
 AllOrders.propTypes = {
-  orderListDb: PropTypes.array
+  orderListDb: PropTypes.array,
+  isPickup: PropTypes.bool,
+  explainRules: PropTypes.bool,
+  seattleArea: PropTypes.bool
 }
 
 export default AllOrders;
