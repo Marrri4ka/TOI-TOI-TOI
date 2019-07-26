@@ -197,7 +197,7 @@ class Header extends React.Component {
     </Container>
         <main>
           <MDBContainer className="text-center my-5">
-             <div class="container">
+             <div class="container gradient-background">
              <div class="row">
              {
                this.props.gameList.map((game,index)=>
