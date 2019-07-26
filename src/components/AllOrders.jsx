@@ -13,16 +13,39 @@ class AllOrders extends React.Component{
     this.props.getInfo();
   }
 
+
+
   render(){
+
+
+
+    let pickup="";
+    let explainMe ="";
+    let delivery ="";
+    if(this.props.isPickup===true){
+        pickup+="Pick up from store"
+      }
+
+      if(this.props.seattleArea===true){
+          delivery+="Seattle area delivery"
+        }
+
+        if(this.props.explainRules===true){
+            explainMe+="Oh yeah, please explain us the rules!"
+          }
+
+          if(this.props.explainRules===false) {
+              explainMe+="No thanks, reading rules is a part of gaming!"
+          }
+
+
+
     return(
       <div class="container">
 
       <div class="row">
         {
            this.props.orderListDb.map((order,index)=>
-
-
-
 
 
 
@@ -34,11 +57,21 @@ class AllOrders extends React.Component{
 
 
                   <hr />
-                  <p>
-                  {order.firstname}
+
+                  <li>{order.firstname}{order.lastname}</li>
+                  <li>{order.address}</li>
+                  <li>{order.time}</li>
+                  <li>{order.date}</li>
+                  <li>{pickup}</li>
 
 
-                  </p>
+                  <li>{explainMe}</li>
+                  <li>{delivery}</li>
+
+
+
+
+
                     <MDBBtn color="unique">Complete</MDBBtn>
                   <hr />
 

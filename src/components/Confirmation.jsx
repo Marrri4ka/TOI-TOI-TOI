@@ -68,8 +68,8 @@ class Confirmation extends React.Component{
                           <div class="plan-data">
 
                               <label for="question2">Address</label>
-                              <li>{this.props.firstname}</li>
-                              <li>{this.props.lastname}</li>
+                              <li>{this.props.firstname}   {this.props.lastname}</li>
+
                               <li>{this.props.address}</li>
                               <span class="plan-price"></span>
                           </div>
