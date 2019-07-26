@@ -220,7 +220,7 @@ class PaymentMethod extends React.Component{
 
           <div class="form-actions">
                 <Fragment>
-            <MDBBtn gradient="purple"  onClick={()=> this.saveOrder()} type="submit" class="btn btn-primary">Submit</MDBBtn>
+            <MDBBtn gradient="purple"  onClick={()=> this.saveOrder()} type="submit">Submit</MDBBtn>
             <MDBBtn  onClick={() => this.setShowMessage(false)}  gradient="purple" type="button" class="btn">Cancel</MDBBtn>
                    </Fragment>
           </div>
