@@ -18,7 +18,7 @@ class RentCart extends React.Component {
     let totalPrice = 5 * this.props.rentlist.length;
 
     return (
-      <div class="container">
+      <div class="container full-height">
         <div class="row">
       	  <br/>
           <div class="col-md-12">

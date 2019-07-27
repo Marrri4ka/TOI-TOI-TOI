@@ -14,7 +14,7 @@ function ShippingMethod(props) {
   }
 
   return (
-    <div class="shippingForm">
+    <div class="shippingForm full-height">
         <div class="formTitle"><h1>Shipping</h1></div><br/>
           <input type="checkbox" id="box-1" ref ={(input)=>{_pickUp=input;}} />
           <label for="box-1"><h5>Pick-up from store FREE</h5></label>

@@ -38,7 +38,7 @@ render(){
 
 
   return(
-    <div class="container login-container">
+    <div class="container login-container full-height">
             <div class="row">
                 <div class="col-md-12 login-form-1">
                     <h3>Login for Form 1</h3>

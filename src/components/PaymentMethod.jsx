@@ -95,7 +95,7 @@ class PaymentMethod extends React.Component{
     }
     let total = totalGames + totalShipping;
   return(
-    <div class="content">
+    <div class="content full-height">
       <div class="container">
 	     <div class="row">
         <div class="col-lg-8 col-md-8 col-sm-7 col-xs-12">

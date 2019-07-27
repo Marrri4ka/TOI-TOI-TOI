@@ -17,7 +17,7 @@ function Address(props){
 
   }
   return(
-    <div class="container">
+    <div class="container full-height">
       <div class="formTitle" align="center"><h1>Delivery Address Details</h1></div><br/>
       <form class="well form-horizontal" action=" " method="post"  id="contact_form">
         <fieldset>
@@ -92,7 +92,7 @@ function Address(props){
                     <input  name="zip" placeholder="Zip Code" class="form-control"  type="text" />
                   </div>
               </div>
-            </div>            
+            </div>
 
           </div>
 
