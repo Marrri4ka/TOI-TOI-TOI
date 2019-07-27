@@ -29,7 +29,7 @@ class PaymentMethod extends React.Component{
       collapse: false,
       isWideEnough: false,
       showButton: true,
-      showMessage: false,
+      showMessage: true,
 
 
 
@@ -158,9 +158,9 @@ class PaymentMethod extends React.Component{
                         <div class="support-menu">
                           <nav class="vertical">
                             <div class="container">
-  <div class="row">
-    <div class="span12">
-      <form class="form-horizontal span6">
+  <div>
+    <div>
+      <form>
         <fieldset>
           <legend>Payment</legend>
 
@@ -187,20 +187,16 @@ class PaymentMethod extends React.Component{
             <label class="control-label">Card Expiry Date</label>
             <div class="controls">
               <div class="row-fluid">
-                <div class="span9">
                   <select class="input-block-level">
                     <option>January</option>
                     <option>February</option>
                     <option>December</option>
                   </select>
-                </div>
-                <div class="span3">
                   <select class="input-block-level">
                     <option>2013</option>
                     <option>...</option>
                     <option>2015</option>
                   </select>
-                </div>
               </div>
             </div>
           </div>
