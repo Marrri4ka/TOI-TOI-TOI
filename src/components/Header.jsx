@@ -35,6 +35,8 @@ import {
 } from 'react-transition-group';
 import PropTypes from 'prop-types';
 
+import { auth } from "../firebase/firebase.utils";
+
 class Header extends React.Component {
   constructor(props) {
     super(props);
@@ -83,20 +85,28 @@ class Header extends React.Component {
                     <MDBNavItem active>
                       <MDBNavLink to="/about">About us</MDBNavLink>
                     </MDBNavItem>
-                    <MDBNavItem>
-                      <MDBNavLink to="/howitworks">How it works</MDBNavLink>
-                    </MDBNavItem>
 
-                    <MDBNavItem>
-                      <MDBNavLink to="/newGame">New Game</MDBNavLink>
-                    </MDBNavItem>
-                    <MDBNavItem>
-                      <MDBNavLink to="/admin">Admin</MDBNavLink>
-                    </MDBNavItem>
-                    <MDBNavItem>
-                      <MDBNavLink to="/allorders">Orders</MDBNavLink>
-                    </MDBNavItem>
+                    {this.props.currentUser ? (
+                      <div className="nav-item nav-link" onClick={() => auth.signOut()}>
+                        Sign out
+                      </div>
+                    ) : (
+                        <MDBNavItem>
+                          <MDBNavLink to="/admin">Admin</MDBNavLink>
+                        </MDBNavItem>
+                    )}
+                    {this.props.currentUser &&
+                      <div>
+                      <MDBNavItem>
+                        <MDBNavLink to="/allorders">Orders</MDBNavLink>
+                      </MDBNavItem>
+                      <MDBNavItem>
+                        <MDBNavLink to="/newGame">New Game</MDBNavLink>
+                      </MDBNavItem>
+                    </div>
+                    }
                   </MDBNavbarNav>
+
 
               </MDBCollapse>
             </MDBNavbar>

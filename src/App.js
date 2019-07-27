@@ -46,7 +46,8 @@ class App extends React.Component {
       address: null,
       time: null,
       date: null,
-      poetFilter: ''
+      poetFilter: '',
+      currentUser:null
 
     };
 
@@ -204,9 +205,8 @@ class App extends React.Component {
 
       <div>
         <Switch>
-        <Route  exact path='/' render={()=><Home handleChange = {this.handleChange} rent = {this.rent}  gameListDb={this.state.masterGameList} filterMore10={this.filterMore10} gameList={this.state.filteredList} />}/>
+        <Route  exact path='/' render={()=><Home currentUser = {this.state.currentUser} handleChange = {this.handleChange} rent = {this.rent}  gameListDb={this.state.masterGameList} filterMore10={this.filterMore10} gameList={this.state.filteredList} />}/>
         <Route path='/about' component={AboutUs}/>
-        <Route path='/howitworks' component={HowItWorks}/>
         <Route path='/rentcart/:index' render={()=><RentCart masterGameList={this.state.masterGameList} rentlist={this.state.rentlist} removeFromList={this.removeFromList} />}/>
 
         <Route path='/newGame' render={()=><NewGame onNewCreation={this.handleAddNewGame}/>}/>

@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 function Home(props){
   return(
     <div>
-      <Header handleChange = {props.handleChange} gameList={props.gameListDb} filterMore10={props.filterMore10} rent = {props.rent} removeFromList={props.removeFromList}/>
+      <Header  currentUser = {props.currentUser}  handleChange = {props.handleChange} gameList={props.gameListDb} filterMore10={props.filterMore10} rent = {props.rent} removeFromList={props.removeFromList}/>
       <Footer/>
     </div>
 

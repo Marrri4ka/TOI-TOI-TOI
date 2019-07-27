@@ -34,20 +34,7 @@ class PaymentMethod extends React.Component{
 
 
     };
-    let totalGames = 5 * props.rentlist.length;
-    let totalShipping = 0;
 
-    if(props.isPickup === true){
-      totalShipping+=0;
-    }
-    if(props.explainRules===true){
-      totalShipping+=5;
-    }
-
-    if(props.seattleArea === true){
-      totalShipping+=5;
-    }
-    let total = totalGames + totalShipping;
   }
 
  saveOrder(){
@@ -93,6 +80,20 @@ class PaymentMethod extends React.Component{
 
 
   render(){
+    let totalGames = 5 * this.props.rentlist.length;
+    let totalShipping = 0;
+
+    if(this.props.isPickup === true){
+      totalShipping+=0;
+    }
+    if(this.props.explainRules===true){
+      totalShipping+=5;
+    }
+
+    if(this.props.seattleArea === true){
+      totalShipping+=5;
+    }
+    let total = totalGames + totalShipping;
   return(
     <div class="content">
       <div class="container">
@@ -250,7 +251,7 @@ class PaymentMethod extends React.Component{
                             <div class="summary-content">
                                 <div class="summary-head"><h5 class="summary-title">Games</h5></div>
                                 <div class="summary-price">
-                                    <p class="summary-text">${this.totalGames}.00</p>
+                                    <p class="summary-text">${totalGames}.00</p>
                                     <span class="summary-small-text pull-right"></span>
                                 </div>
                             </div>
@@ -259,7 +260,7 @@ class PaymentMethod extends React.Component{
                             <div class="summary-content">
                                <div class="summary-head"> <h5 class="summary-title">Shipping</h5></div>
                                 <div class="summary-price">
-                                    <p class="summary-text">${this.totalShipping}.00</p>
+                                    <p class="summary-text">${totalShipping}.00</p>
                                     <span class="summary-small-text pull-right"></span>
                                 </div>
                             </div>
@@ -268,7 +269,7 @@ class PaymentMethod extends React.Component{
                             <div class="summary-content">
                                <div class="summary-head"> <h5 class="summary-title">Total</h5></div>
                                 <div class="summary-price">
-                                    <p class="summary-text">$ {this.total}.00</p>
+                                    <p class="summary-text">$ {total}.00</p>
                                     <span class="summary-small-text pull-right"></span>
                                 </div>
                             </div>
