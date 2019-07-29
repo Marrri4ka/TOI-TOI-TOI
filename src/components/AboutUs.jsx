@@ -26,7 +26,7 @@ class AboutUs extends React.Component {
             <div class="diamond-narrow"></div>
         </div>
         <h1 class="h1-strategie">History</h1>
-        <p class="p-strategie">There are several things, that I can do until 03.00 AM. One of them is playing board games. I really enjoy play different games, not only Settlers of Catan. Ah, also I am a mom. THis is important infornmation. Because when you are a parent of kids under 3, you can be a board game player only after kids are going to bed. So you cann't go to bars or boardgame shops.So the only way to play new games is actually buy new games? To expencive pleasure! So I thought it should be a great idea to have a serviece for renting games! And here you go!</p>
+        <p class="p-strategie">There are several things, that I can do until 03.00 AM. One of them is playing board games. I really enjoy playing different games, not only Settlers of Catan. Also I am a mom with kids under 3,  which makes it hard to be a boerdgamer.You can't go to bars or board game shops. So the only way to play new games is actually buying new games! Too expensive of a hobby! So I thought it would be a great idea to have a service for renting games! And here you go!</p>
     </div>
 
     <div class="service-container sc2">
@@ -42,7 +42,7 @@ class AboutUs extends React.Component {
             <div class="diamond-narrow"></div>
         </div>
         <h1 class="h1-design">About</h1>
-        <p class="p-design">We provide a service for renting games! We can deliver games to your place or you can pick up them from a store! We are also  more than happy to explain you rules! The only inconvenient thing is: you have to return games by yourself! Or leave in bars, that we support! </p>
+        <p class="p-design">We provide a service for renting games! We can deliver games to your place or you can pick up them from a store! We are also  more than happy to explain you the rules!  Return to us directly or leave in a participating bar! </p>
     </div>
 
     <div class="service-container sc3">
@@ -72,7 +72,7 @@ class AboutUs extends React.Component {
             <div class="diamond-narrow"></div>
         </div>
         <h1 class="h1-ux">Partnership</h1>
-        <p class="p-ux">We work with two big boardgame shops in Seattle: Blue Highway Games and Mox Boarding House! If you want join us, don't wait for better moment! Best moment is just now! </p>
+        <p class="p-ux">We work with two big board game shops in Seattle: Blue Highway Games and Mox Boarding House! If you want join us, don't wait for better moment! Best moment is just now! </p>
     </div>
 
     <div class="service-container sc5">
@@ -88,7 +88,7 @@ class AboutUs extends React.Component {
             <div class="diamond-narrow"></div>
         </div>
         <h1 class="h1-marketing">App</h1>
-        <p class="p-marketing">For our client's convinience we developed an application, which you can free download from App Store! This app wa build with React Native!  Here you find a link: Use it and enjoy it!                                                                                                                                                                           </p>
+        <p class="p-marketing">For our client's convinience we developed an application, which you can  download for free from your  App Store! This app was built with React Native!  Here you will find a link: Use it and enjoy it!                                                                                                                                                                           </p>
     </div>
 
     <div class="service-container sc6">
@@ -106,7 +106,7 @@ class AboutUs extends React.Component {
             <div class="diamond-narrow"></div>
         </div>
         <h1 class="h1-dev">Contact</h1>
-        <p class="p-dev">If you have any questions and suggestions, please let us know!
+        <p class="p-dev">If you have any questions or suggestions, please let us know!
         <li>Email: mariiapopovych@gmail.com</li>
         <li>Phone: +1(206) 476 .. .. </li>
         <li> Linkedin </li>
