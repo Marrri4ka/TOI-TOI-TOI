@@ -26,6 +26,10 @@ class AllOrders extends React.Component{
 
   render(){
 
+    if (this.props.currentUser === null) {
+    return <div class='container full-height'><h1>Darling, are you a hacker?</h1></div>;
+  }
+
 
     let index = this.props.match.params.index;
     let pickup="";
@@ -51,6 +55,7 @@ class AllOrders extends React.Component{
           if(this.props.explainRules===false) {
               explainMe+="Reading rules is a part of gaming!"
           }
+
 
 
 
@@ -114,7 +119,8 @@ AllOrders.propTypes = {
   isPickup: PropTypes.bool,
   explainRules: PropTypes.bool,
   seattleArea: PropTypes.bool,
-  deleteOrder: PropTypes.func
+  deleteOrder: PropTypes.func,
+  currentUser: PropTypes.object
 }
 
 export default withRouter(AllOrders);
