@@ -100,9 +100,7 @@ class Header extends React.Component {
                       <MDBNavItem>
                         <MDBNavLink to="/allorders">Orders</MDBNavLink>
                       </MDBNavItem>
-                      <MDBNavItem>
-                        <MDBNavLink to="/newGame">New Game</MDBNavLink>
-                      </MDBNavItem>
+                    
                     </div>
                     }
                   </MDBNavbarNav>

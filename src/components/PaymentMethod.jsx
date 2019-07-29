@@ -29,7 +29,7 @@ class PaymentMethod extends React.Component{
       collapse: false,
       isWideEnough: false,
       showButton: true,
-      showMessage: true,
+      showMessage: false,
 
 
 

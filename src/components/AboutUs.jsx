@@ -10,7 +10,7 @@ class AboutUs extends React.Component {
   render(){
     return(
       <div class="services">
-  
+
     <div class="service-container sc1">
         <div class="service-icons">
             <svg class="svg-strategie">
@@ -25,13 +25,13 @@ class AboutUs extends React.Component {
             </svg>
             <div class="diamond-narrow"></div>
         </div>
-        <h1 class="h1-strategie">Strategie</h1>
-        <p class="p-strategie">Langfristige Strategieentwicklung anstelle von kurzzeitigem Aktionismus ist der Eckpfeiler auf dem erfolgreiche Projekte aufbauen. Wir beraten Sie schonungslos ehrlich und und haben dabei das große Ganze und die kleinen Details, die Erfolg bestimmen, im Blick.</p>
+        <h1 class="h1-strategie">History</h1>
+        <p class="p-strategie">There are several things, that I can do until 03.00 AM. One of them is playing board games. I really enjoy play different games, not only Settlers of Catan. Ah, also I am a mom. THis is important infornmation. Because when you are a parent of kids under 3, you can be a board game player only after kids are going to bed. So you cann't go to bars or boardgame shops.So the only way to play new games is actually buy new games? To expencive pleasure! So I thought it should be a great idea to have a serviece for renting games! And here you go!</p>
     </div>
 
     <div class="service-container sc2">
         <div class="service-icons">
-            <svg class="svg-marketing">
+            <svg class="svg-design">
                 <path class="ma-path1" fill="none" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" d="M22.7,35.6H1.4c-0.4,0-0.8-0.3-0.8-0.8V1.4c0-0.4,0.3-0.8,0.8-0.8 h21.3c0.4,0,0.8,0.3,0.8,0.8v33.5C23.5,35.3,23.1,35.6,22.7,35.6L22.7,35.6z"></path>
                 <path class="ma-path2" fill="none" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" d="M19.7,26.5H4.4c-0.4,0-0.8-0.3-0.8-0.8V6.4C3.7,6,4,5.7,4.4,5.7h15.2 c0.4,0,0.8,0.3,0.8,0.8v19.3C20.4,26.1,20.1,26.5,19.7,26.5L19.7,26.5z"></path>
                 <circle class="ma-path3" fill="none" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" cx="12.1" cy="31" r="1.8"></circle>
@@ -41,8 +41,8 @@ class AboutUs extends React.Component {
             </svg>
             <div class="diamond-narrow"></div>
         </div>
-        <h1 class="h1-marketing">Digital Marketing</h1>
-        <p class="p-marketing">Clickbaiting und Fans sammeln war gestern, heute geht es um die nahtlose Vernetzung von Kommunikation und Marketing. Überzeugen Sie durch nachhaltiges Inbound-Marketing und begleiten Sie Ihre Kunden über die gesamte Customer Journey und sämtliche Touchpoints hinweg. </p>
+        <h1 class="h1-design">About</h1>
+        <p class="p-design">We provide a service for renting games! We can deliver games to your place or you can pick up them from a store! We are also  more than happy to explain you rules! The only inconvenient thing is: you have to return games by yourself! Or leave in bars, that we support! </p>
     </div>
 
     <div class="service-container sc3">
@@ -55,8 +55,8 @@ class AboutUs extends React.Component {
             </svg>
             <div class="diamond-narrow"></div>
         </div>
-        <h1 class="h1-design">Design & Grafik</h1>
-        <p class="p-design">Der erste Eindruck zählt. Wir verhelfen Ihrer Marke im Gedächtnis zu bleiben, verpassen Ihrer Website einen neuen Anstrich oder übernehmen die Entwickung des gesamten Corporate Designs. In jedem Fall positionieren wir Sie im besten Licht. </p>
+        <h1 class="h1-design">Design</h1>
+        <p class="p-design">This website was desighned with an awesome free and open-source CSS framework, called bootstrap. Special thanks go to Mark Otto and Jacob Thornton - original authors of this framework!                                                                                        </p>
     </div>
 
 
@@ -71,23 +71,24 @@ class AboutUs extends React.Component {
             </svg>
             <div class="diamond-narrow"></div>
         </div>
-        <h1 class="h1-ux">User Experience</h1>
-        <p class="p-ux">Großartiges Interface-Design ist keine Frage des Geschmacks. Wir halten uns lieber an vier kleine Worte, die über den Erfolg entscheiden: Usability, Accessibility, Performance und Ästhetik. </p>
+        <h1 class="h1-ux">Partnership</h1>
+        <p class="p-ux">We work with two big boardgame shops in Seattle: Blue Highway Games and Mox Boarding House! If you want join us, don't wait for better moment! Best moment is just now! </p>
     </div>
 
     <div class="service-container sc5">
         <div class="service-icons">
-            <svg class="svg-acc">
-                <path class="acc-path1" fill="none" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" d="M12.5,24C6.1,24,0.8,18.8,0.8,12.4C0.8,6,6.1,0.7,12.5,0.7 c4.3,0,8.2,2.4,10.3,6.2h16.6c3,0,5.5,2.5,5.5,5.5c0,2.7-2,5-4.7,5.4l-0.4,0.1l-0.3-0.3l-1.7-1.9l-2.2,2.5l-2.2-2.5l-1.9,2.1 L31,17.9h-8.3C20.7,21.6,16.7,24,12.5,24L12.5,24z"></path>
-                <path class="acc-path2" fill="none" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" d="M9.4,14.9c-1.4,0-2.5-1.1-2.5-2.5S8,9.8,9.4,9.8 c1.4,0,2.5,1.1,2.5,2.5S10.8,14.9,9.4,14.9L9.4,14.9z"></path>
-            </svg>
+        <svg class="svg-marketing">
+            <path class="ma-path1" fill="none" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" d="M22.7,35.6H1.4c-0.4,0-0.8-0.3-0.8-0.8V1.4c0-0.4,0.3-0.8,0.8-0.8 h21.3c0.4,0,0.8,0.3,0.8,0.8v33.5C23.5,35.3,23.1,35.6,22.7,35.6L22.7,35.6z"></path>
+            <path class="ma-path2" fill="none" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" d="M19.7,26.5H4.4c-0.4,0-0.8-0.3-0.8-0.8V6.4C3.7,6,4,5.7,4.4,5.7h15.2 c0.4,0,0.8,0.3,0.8,0.8v19.3C20.4,26.1,20.1,26.5,19.7,26.5L19.7,26.5z"></path>
+            <circle class="ma-path3" fill="none" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" cx="12.1" cy="31" r="1.8"></circle>
+        </svg>
             <svg class="arrow-right ar5" preserveAspectRatio="none">
                 <path fill-rule="evenodd" clip-rule="evenodd" stroke-width="1.5" fill="none" stroke="#000000" stroke-miterlimit="10" d="M0.5,0l60,91.3L0.5,182"></path>
             </svg>
             <div class="diamond-narrow"></div>
         </div>
-        <h1 class="h1-acc">Accessibility</h1>
-        <p class="p-acc">Jeder Mensch hat ein Anrecht auf Information. Intuitive Navigation, responsive Design und semantisch korrekt erstellte Inhalte sind die Zutaten für Accessibility. Wir kennen uns mit Barrierefreiheit aus und garantieren, dass alle Inhalte Ihrer Website optimal erreichbar sind.</p>
+        <h1 class="h1-marketing">App</h1>
+        <p class="p-marketing">For our client's convinience we developed an application, which you can free download from App Store! This app wa build with React Native!  Here you find a link: Use it and enjoy it!                                                                                                                                                                           </p>
     </div>
 
     <div class="service-container sc6">
@@ -104,8 +105,13 @@ class AboutUs extends React.Component {
             </svg>
             <div class="diamond-narrow"></div>
         </div>
-        <h1 class="h1-dev">Development</h1>
-        <p class="p-dev">Wir sind eine der führenden Drupal-Agenturen des Landes. Und stolz darauf. Wir setzen auf Open Source Lösungen, lieben es mit neuen Technologien zu arbeiten und reizen dabei das mögliche unter Einhaltung höchster Usability, aus. So wird jedes Projekt zum Masterpiece. </p> </div>
+        <h1 class="h1-dev">Contact</h1>
+        <p class="p-dev">If you have any questions and suggestions, please let us know!
+        <li>Email: mariiapopovych@gmail.com</li>
+        <li>Phone: +1(206) 476 .. .. </li>
+        <li> Linkedin </li>
+        Happy to hear from you!
+         </p> </div>
 
 
 </div>

@@ -25,7 +25,7 @@ class RentCart extends React.Component {
             <div class="col-md-12 col-sm-12 col-xs-12 col-md-pull-12 col-sm-pull-12">
               <div class="panel panel-default">
                 <div class="panel-heading text-center">
-                  <h4>Current Cart</h4>
+                  <h4>Renting Cart</h4>
                 </div>
                 <div class="panel-body">
                   <table class="table borderless">
@@ -81,7 +81,7 @@ class RentCart extends React.Component {
                       <button
                         type="button"
                         class="btn btn-grey btn-lg btn-block">
-                        Continue shopping
+                        Continue renting
                       </button>
                     </Link>
                 </div>
