@@ -100,7 +100,7 @@ class Header extends React.Component {
                       <MDBNavItem>
                         <MDBNavLink to="/allorders">Orders</MDBNavLink>
                       </MDBNavItem>
-                    
+
                     </div>
                     }
                   </MDBNavbarNav>
@@ -115,9 +115,9 @@ class Header extends React.Component {
               <div className="d-flex align-items-center">.
               <MDBCol md="12">
                 <center>
-                  <h1 className="App-header-text">Board Game Rent</h1>
+                  <h1 className="App-header-text">Toi! Toi! Toi!</h1>
                   <h5 className="App-header-text">
-                    It will always stay visible on the top, even when you scroll down
+                  We provide a service for renting board games! Stay with us!
                   </h5>
                   <br />
                 </center>
