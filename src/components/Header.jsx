@@ -117,7 +117,7 @@ class Header extends React.Component {
                 <center>
                   <h1 className="App-header-text">Toi! Toi! Toi!</h1>
                   <h5 className="App-header-text">
-                  We provide a service for renting board games! Stay with us!
+                      We provide a service for renting board games! Have fun! Stay with us! 
                   </h5>
                   <br />
                 </center>
