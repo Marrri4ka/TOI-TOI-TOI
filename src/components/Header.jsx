@@ -79,12 +79,21 @@ class Header extends React.Component {
 
               {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
               <MDBCollapse isOpen={this.state.collapse} navbar>
+              <div class="container">
+                  <div class="row">
+                  <div class="alert alert-success alert-dismissible" role="alert">
+                  <button type="button" onclick="this.parentNode.parentNode.removeChild(this.parentNode);" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                  <strong><i class="fa fa-warning"></i> Good news!</strong> <marquee><p>We just added!</p></marquee>
+                </div>
+                  </div>
+                </div>
 
 
                 <MDBNavbarNav right>
                     <MDBNavItem active>
                       <MDBNavLink to="/about">About us</MDBNavLink>
                     </MDBNavItem>
+                
 
                     {this.props.currentUser ? (
                       <div className="nav-item nav-link" onClick={() => auth.signOut()}>
@@ -101,12 +110,15 @@ class Header extends React.Component {
                         <MDBNavLink to="/allorders">Orders</MDBNavLink>
                       </MDBNavItem>
 
+
                     </div>
                     }
                   </MDBNavbarNav>
 
 
               </MDBCollapse>
+
+
             </MDBNavbar>
 
 
@@ -115,9 +127,11 @@ class Header extends React.Component {
               <div className="d-flex align-items-center">.
               <MDBCol md="12">
                 <center>
+
                   <h1 className="App-header-text">Toi! Toi! Toi!</h1>
                   <h5 className="App-header-text">
-                      We provide a service for renting board games! Have fun! Stay with us! 
+                      We provide a service for renting board games! Have fun! Stay with us!
+
                   </h5>
                   <br />
                 </center>
@@ -134,10 +148,12 @@ class Header extends React.Component {
 
                      aria-label="Search" />
                 </form>
+
               </MDBCol>
             </div>
             </MDBMask>
           </MDBView>
+
         </header>
         <Container style={{ paddingTop: '2rem' }}>
           {this.state.showButton && (
