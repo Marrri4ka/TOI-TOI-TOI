@@ -192,12 +192,13 @@ class App extends React.Component {
 
   }
 
-  handleChange = (e) => {
+  handleChange = (e,) => {
     var newList = this.state.masterGameList.filter(m =>
       m.name.toLowerCase().includes(e.target.value.toLowerCase())
     );
     this.setState({
-      masterGameList: newList
+
+      filteredList: newList
     });
   }
 
@@ -206,7 +207,7 @@ class App extends React.Component {
 
       <div>
         <Switch>
-        <Route  exact path='/' render={()=><Home currentUser = {this.state.currentUser} handleChange = {this.handleChange} rent = {this.rent}  gameListDb={this.state.masterGameList} filterMore10={this.filterMore10} gameList={this.state.filteredList} />}/>
+        <Route  exact path='/' render={()=><Home currentUser = {this.state.currentUser} handleChange = {this.handleChange} rent = {this.rent}  gameListDb={this.state.filteredList} filterMore10={this.filterMore10} gameList={this.state.filteredList} masterGameList={this.state.masterGameList} />}/>
         <Route path='/about' component={AboutUs}/>
         <Route path='/rentcart/:index' render={()=><RentCart masterGameList={this.state.masterGameList} rentlist={this.state.rentlist} removeFromList={this.removeFromList} />}/>
 

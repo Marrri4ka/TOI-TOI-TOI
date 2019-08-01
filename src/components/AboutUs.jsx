@@ -88,7 +88,7 @@ class AboutUs extends React.Component {
             <div class="diamond-narrow"></div>
         </div>
         <h1 class="h1-marketing">App</h1>
-        <p class="p-marketing">For our client's convinience we developed an application, which you can  download for free from your  App Store! This app was built with React Native!  Here you will find a link: Use it and enjoy it!                                                                                                                                                                           </p>
+        <p class="p-marketing">For our client's convinience we developed an application, which you can  download for free from your  App Store! This app was built with React Native! Use it and enjoy it!                                                                                                                                                                                   </p>
     </div>
 
     <div class="service-container sc6">

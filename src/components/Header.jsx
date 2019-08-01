@@ -77,23 +77,26 @@ class Header extends React.Component {
         <header>
             <MDBNavbar color="transparent" dark expand="md" fixed="top">
 
-              {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
-              <MDBCollapse isOpen={this.state.collapse} navbar>
-              <div class="container">
-                  <div class="row">
-                  <div class="alert alert-success alert-dismissible" role="alert">
-                  <button type="button" onclick="this.parentNode.parentNode.removeChild(this.parentNode);" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-                  <strong><i class="fa fa-warning"></i> Good news!</strong> <marquee><p>We just added!</p></marquee>
-                </div>
+              {!this.state.collapse && <div>
+                <MDBCollapse isOpen={this.state.collapse} navbar>
+                <div class="container">
+                    <div class="row">
+                    <div class="alert alert-success alert-dismissible" role="alert" onClick={this.onClick}>
+                    <button type="button" onclick="this.parentNode.parentNode.removeChild(this.parentNode);" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <strong><i class="fa fa-warning"></i> Good news!</strong> <marquee><p>We just added Azul!</p></marquee>
                   </div>
-                </div>
+                    </div>
+                  </div>
+                  </MDBCollapse>
+                  </div>
+                }
 
 
                 <MDBNavbarNav right>
                     <MDBNavItem active>
                       <MDBNavLink to="/about">About us</MDBNavLink>
                     </MDBNavItem>
-                
+
 
                     {this.props.currentUser ? (
                       <div className="nav-item nav-link" onClick={() => auth.signOut()}>
@@ -116,7 +119,7 @@ class Header extends React.Component {
                   </MDBNavbarNav>
 
 
-              </MDBCollapse>
+
 
 
             </MDBNavbar>
@@ -266,9 +269,11 @@ class Header extends React.Component {
 
 Header.propTypes = {
   gameList: PropTypes.array,
+  filteredList: PropTypes.array,
   rent: PropTypes.func,
   filterMore10: PropTypes.func,
-  handleChange: PropTypes.func
+  handleChange: PropTypes.func,
+  masterGameList: PropTypes.array
 
 }
 
