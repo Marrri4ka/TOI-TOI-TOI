@@ -1,4 +1,12 @@
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+TOI_TOI_TOI -is a service,that offers game rental at different costs.
+ Customers can serarch and filter games. (Filter: playtime, rate, players)
+ The total price depends on the area where the customer lives. 
+ The option "rules explanation" is supported.
+
 
 ![Alt text](/img/1a.png)
 ![Alt text](/img/1c.png)
